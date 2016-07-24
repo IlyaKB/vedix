@@ -1,0 +1,5 @@
+# turn 403 header and show own page
+<Files "*.php">
+    RewriteRule ^(.*)$ / [R=403]
+    ErrorDocument 403 /403.php
+</Files>

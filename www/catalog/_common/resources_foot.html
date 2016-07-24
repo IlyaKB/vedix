@@ -1,0 +1,19 @@
+{{#resources_base}}
+{{#foot}}{{#css}}<link rel="stylesheet" type="text/css" href="{{href}}"/>{{/css}}{{#js}}<script type="text/javascript" src="{{src}}"></script>{{/js}}{{/foot}}
+{{/resources_base}}
+{{#resources_site}}
+{{#foot}}{{#css}}<link rel="stylesheet" type="text/css" href="{{href}}"/>{{/css}}{{#js}}<script type="text/javascript" src="{{src}}"></script>{{/js}}{{/foot}}
+{{/resources_site}}
+{{#resources_module}}
+{{#foot}}{{#css}}<link rel="stylesheet" type="text/css" href="{{href}}"/>{{/css}}{{#js}}<script type="text/javascript" src="{{src}}"></script>{{/js}}{{/foot}}
+{{/resources_module}}
+
+{{#require}}
+	<script type="text/javascript">
+		require(['{{page_script}}'], function(Page) {
+			new Page({{{js_data}}});
+		});
+	</script>
+{{/require}}
+
+{{>gcommon:widgets}}

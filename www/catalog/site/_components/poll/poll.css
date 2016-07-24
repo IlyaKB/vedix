@@ -1,0 +1,59 @@
+div.poll div.question {
+  font-size: 10pt;
+  font-weight: bold;
+  background: rgba(255, 250, 250, 0.95);
+  border: 1px solid #eee;
+  padding: 2px;
+  border-radius: 5px;
+}
+div.poll table.items tr {
+  cursor: pointer;
+}
+div.poll table.items tr td {
+  font-size: 10pt;
+}
+div.poll table.items tr td:nth-child(1) {
+  width: 20px;
+}
+div.poll table.items tr td:nth-child(1) input {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 3px;
+  margin-top: 2px;
+}
+div.poll table.items tr.selected {
+  background-color: #acdd4a;
+  color: green;
+}
+div.poll table.items tr:hover {
+  background-color: #cfee8e;
+  color: #008a00;
+}
+div.poll div.results > div:hover {
+  background-color: #ffffdb;
+  cursor: default;
+}
+div.poll div.results div.text {
+  font-size: 10pt;
+  color: #343;
+}
+div.poll div.results div.text span.votes {
+  font-size: 8pt;
+}
+div.poll div.results div.line {
+  margin-bottom: 5px;
+}
+div.poll div.results div.line div {
+  height: 10px;
+}
+div.poll div.buttons {
+  text-align: center;
+  margin: 5px;
+}
+div.poll div.success {
+  text-align: center;
+  font-weight: bold;
+  font-size: 9pt;
+  color: green;
+  margin-bottom: 5px;
+}

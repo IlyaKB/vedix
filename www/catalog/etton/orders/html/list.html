@@ -1,0 +1,60 @@
+<div class="form-caption">Список моих заказов</div>
+
+<!-- ko with: list -->
+
+<!-- DYNAMIC CONTENT -->
+<div class="list-controls">
+	<button data-bind="click: clickAdd">Новый заказ...</button> <button data-bind="click: clickRefresh">Обновить список</button>
+</div>
+
+<div class="etton-list" data-bind="visible: true" style="display: none;">
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Номер</th>
+				<th class="sortable" title="Отсортировать по этому столбцу" data-bind="click: sortClick" data-clm="createdate">Дата создания <span data-bind="text: (sorting_field() == 'createdate' ? sorting_dir_text() : '')"></span></th>
+				<th>Заказчик</th>
+				<th class="sortable" title="Отсортировать по этому столбцу" data-bind="click: sortClick" data-clm="spec_count">Кол-во товаров <span data-bind="text: (sorting_field() == 'spec_count' ? sorting_dir_text() : '')"></span></th>
+				<th>Операции</th>
+			</tr>
+		</thead>
+		<tbody data-bind="css: { 'loading': loading() || detail.loading() }">
+			<!-- ko foreach: items -->
+			<tr data-bind="click: $parent.clickTR">
+				<td></td>
+				<td data-bind="text: number"></td>
+				<td data-bind="html: createdate"></td>
+				<td data-bind="text: customer"></td>
+				<td data-bind="text: spec_count ? spec_count : ''"></td>
+				<td class="js-no-tr-click"><button data-bind="click: $parent.clickEdit">Изменить</button> <button data-bind="click: $parent.clickDelete">Удалить</button></td>
+			</tr>
+			<!-- /ko -->
+		</tbody>
+		<tfoot>
+		<!-- ko if: ! items().length -->
+			<tr><td></td><td colspan="5"><div style="text-align: center">Заказов нет</div></td></tr>
+		<!-- /ko -->
+		</tfoot>
+	</table>
+</div>
+<!-- /DYNAMIC CONTENT -->
+
+<!-- STATIC SOURCE -->
+<div id="etton_list_static" data-bind="sourcedata: items, visible: false" data-sd-type="observableArray">
+	{{#orders}}
+	<section data-sd-type="object">
+		<hr/>
+		<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+		<div>
+			<span data-sd-field="number" data-sd-type="string">{{number}}</span> |
+			<span data-sd-field="createdate" data-sd-type="string">{{createdate}}</span> |
+			<span data-sd-field="customer" data-sd-type="string">{{customer}}</span> |
+			<span data-sd-field="spec_count" data-sd-type="number">{{spec_count}}</span>
+		</div>
+	</section>
+	{{/orders}}
+</div>
+<!-- /STATIC SOURCE -->
+
+<!-- /ko -->

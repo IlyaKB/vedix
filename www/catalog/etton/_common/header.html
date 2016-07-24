@@ -1,0 +1,35 @@
+<div class="header-title">
+	Веб-приложение Etton
+</div>
+
+<div class="mainmenu">
+	<ul>
+		<li>
+			<a class="btn btn-default {{#entity_start}}current{{/entity_start}}" href="/etton">
+				Стартовая страница
+			</a>
+		</li>
+		<li>
+			<a class="btn btn-default {{#entity_orders}}current{{/entity_orders}}" href="/etton/orders">
+				Мои заказы
+			</a>
+		</li>
+		<li>
+			<a class="btn btn-default {{#entity_positions}}current{{/entity_positions}}" href="/etton/positions">
+				Каталог товаров
+			</a>
+		</li>
+		<li>
+			<a class="btn btn-default {{#entity_options}}current{{/entity_options}}" href="#">
+				Настройки магазина
+			</a>
+		</li>
+	</ul>
+</div>
+
+{{#user}}{{#id}}
+<div class="exit-cnt">
+	Вы зашли как <b>{{#user}}{{login}}{{/user}}</b> |
+	<a href="#" data-bind="attr: { href: '/?'+'logout'}">Выйти из системы</a>
+</div>
+{{/id}}{{/user}}

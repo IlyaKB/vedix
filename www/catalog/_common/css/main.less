@@ -1,0 +1,165 @@
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+summary {
+	cursor: pointer;
+}
+body {
+	height: 100%;
+}
+
+body {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+a:focus {
+	text-decoration: none;
+}
+
+.standart-block(@radius: 5px) {
+	box-shadow: 0 0 @radius rgba(0, 0, 0, 0.4);
+	background-color: #fefdfc;
+}
+
+/* Main layer
+-----------------------------------------------------------------------------*/
+.main-layer {
+	margin: 0 auto;
+	min-width: 640px;
+	max-width: 1100px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header-layer {
+	height: 130px;
+	.standart-block;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle-layer {
+	width: 100%;
+	padding: 3px 3px 48px;
+	position: relative;
+	.standart-block;
+}
+.middle-layer:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+.content-layer {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.content-main-layer {
+	padding: 5px 230px 5px 230px;
+	text-align: justify;
+}
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+.left-layer {
+	float: left;
+	width: 220px;
+	margin-left: -100%;
+	position: relative;
+	.standart-block;
+}
+
+/* Right Sidebar
+-----------------------------------------------------------------------------*/
+.right-layer {
+	float: left;
+	width: 220px;
+	margin-left: -220px;
+	position: relative;
+	.standart-block;
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer-layer {
+	margin: -48px auto 0;
+	height: 48px+1; // что бы страница никогда не прыгала из-за вертикального скроллбара
+	min-width: 640px;
+	max-width: 1100px;
+	position: relative;
+	.standart-block;
+}
+
+
+/* Block
+-----------------------------------------------------------------------------*/
+.block-title {
+	text-align: center;
+	font: bold 12pt Arial;
+	background: rgba(250, 245, 245, 0.95);
+	border: 1px outset #aaa;
+	padding: 2px;
+	border-radius: 5px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+.block-data {
+	min-height: 100px;
+	padding: 5px 5px 0px 5px;
+}
+
+/* Button
+-----------------------------------------------------------------------------*/
+.button {
+	background-color: #eee;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Notifications
+-----------------------------------------------------------------------------*/
+.notifications {
+	
+	.notification {
+		height: 30px;
+		font-size: 14pt;
+		text-align: center;
+		cursor: pointer;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		z-index: 1000;
+	}
+	
+	.warning {
+		background-color: #fce169;
+	}
+	.error {
+		background-color: #feada7;
+	}
+	.success {
+		background-color: #bdee5b;
+	}
+}
+
+/* Alerts
+-----------------------------------------------------------------------------*/
+.alert-error {
+	border-color: red;
+}
+
+/* Buttons
+-----------------------------------------------------------------------------*/
+button {
+	border-radius: 5px;
+}
+
+@import "header.less";
+@import "footer.less";

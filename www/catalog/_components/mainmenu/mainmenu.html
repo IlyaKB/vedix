@@ -1,0 +1,19 @@
+<ul>
+	{{#mainmenu}}
+	<li{{^childsEmpty}} class="dropdown"{{/childsEmpty}}>
+		{{^childsEmpty}}
+		<a role="button" data-toggle="dropdown" class="btn btn-default {{#current}}current{{/current}}" data-target="#" href="{{src}}" {{#hrefEmpty}}onclick="return false;"{{/hrefEmpty}}>
+			{{name}} <span class="caret"></span>
+		</a>{{/childsEmpty}}
+		{{#childsEmpty}}
+		<a class="btn btn-default {{#current}}current{{/current}}" href="{{src}}" {{#hrefEmpty}}onclick="return false;"{{/hrefEmpty}}>
+			{{name}}
+		</a>{{/childsEmpty}}
+		{{^childsEmpty}}<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">{{/childsEmpty}}
+			{{#childs}}
+				{{>gcomponent:mainmenu/submenu}}
+			{{/childs}}
+		{{^childsEmpty}}</ul>{{/childsEmpty}}
+	</li>
+	{{/mainmenu}}
+</ul>

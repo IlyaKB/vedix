@@ -1,0 +1,24 @@
+@import "../_common/css/main.less";
+@import "./css/list.less";
+@import "./css/detail.less";
+@import "./css/positions.less";
+
+div.form-caption {
+	font: bold 16pt Arial;
+}
+
+input, button {
+	border: 1px solid gray;
+	border-radius: 3px;
+	padding: 2px 3px 2px 3px;
+}
+
+input[type=button], button {
+	padding: 2px 10px 2px 10px;
+	&:hover {
+		color: red;
+	}
+}
+input.readonly, button.readonly {
+	background-color: #fcfcfc;
+}

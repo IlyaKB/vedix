@@ -1,0 +1,35 @@
+{{#$KEY}}
+<div id="$KEY" class="poll" data-bind="with: $KEY" data-id="{{id}}" data-max-votes="{{max_votes}}" data-voted="{{voted}}">
+	<div class="question">{{question}}</div>
+	{{^voted}}
+	<table class="items" data-bind="visible: mode() == 'voting'">
+		<tbody>
+			{{#items}}
+			<tr valign="top" data-bind="click: itemClick" data-id="{{id}}">
+				<td><input type="checkbox" readonly="readonly"/></td>
+				<td>{{text}}</td>
+			</tr>
+			{{/items}}
+		</tbody>
+	</table>
+	{{/voted}}
+	<div class="results" style="display: none" data-bind="visible: mode() == 'results'">
+		{{#items}}
+		<div data-id="{{id}}" data-votes="{{votes}}">
+			<div class="text">{{text}}&nbsp;<span class="votes">({{votes}})</span></div>
+			<div class="line">
+				<div style="width: {{#votes_per}}{{.}}%{{/votes_per}}{{^votes_per}}1px{{/votes_per}}; background-color: {{color}}"></div>
+			</div>
+		</div>
+		{{/items}}
+	</div>
+	{{^voted}}
+	<div class="buttons">
+		<button data-bind="click: resultsClick, visible: mode() == 'voting'">Результаты</button>
+		<button data-bind="click: votingClick, visible: mode() == 'results' && ! voted()" style="display: none">Выбрать варианты</button>
+		<button data-bind="click: voteClick, visible: mode() == 'voting'">Голосовать</button>
+	</div>
+	{{/voted}}
+	<div class="success" style="display: none" data-bind="visible: voted()">Ваш голос был учтён</div>
+</div>
+{{/$KEY}}

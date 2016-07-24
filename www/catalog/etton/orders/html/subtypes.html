@@ -1,0 +1,32 @@
+<!-- ko with: subtypes -->
+
+<div class="etton-subtypes" style="display: none" data-bind="visible: visible">
+	<table>
+		<caption>Выберите подтип товара:</caption>
+		<thead>
+			<tr>
+				<th>Название</th>
+			</tr>
+		</thead>
+		<tbody data-bind="css: { 'loading': loading() }">
+			<!-- ko foreach: items -->
+			<tr data-bind="click: $parent.clickRow">
+				<td data-bind="text: name, attr: { title: id }"></td>
+			</tr>
+			<!-- /ko -->
+		</tbody>
+		<tfoot>
+			<tr data-bind="visible: loading()"><td colspan="2"><div style="text-align: center">Подтипы загружаются...</div></td></tr>
+			<tr data-bind="visible: ! loading() && ! items().length"><td colspan="2"><div style="text-align: center">Подтипы отсутствуют</div></td></tr>
+		</tfoot>
+	</table>
+
+	<div class="subtypes-control">
+		<ul>
+			<li><button data-bind="click: cancelClick">Отмена</button></li>
+		</ul>
+	</div>
+
+</div>
+
+<!-- /ko -->

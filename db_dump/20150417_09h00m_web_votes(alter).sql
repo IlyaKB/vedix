@@ -1,0 +1,3 @@
+-- #36 2015.04.17 09:00:00
+
+ALTER TABLE `web_votes` ADD `sessionid` CHAR(32) NULL DEFAULT NULL AFTER `session_id`, ADD `ip` VARCHAR(64) NULL DEFAULT NULL AFTER `sessionid`;

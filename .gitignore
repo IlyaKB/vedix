@@ -1,0 +1,3 @@
+/www/caches/mustache/*.php
+/www/caches/cache/*.dat
+/www/caches/cache/*.t

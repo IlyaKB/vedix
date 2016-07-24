@@ -1,0 +1,53 @@
+{{!#poll_first} }
+<div class="block-title">Наш опрос</div>
+<div class="block-data">
+	{ {>component:poll('poll_first')} }
+</div>
+{ {/poll_first}}
+
+{{!#poll_second} }
+<div class="block-title">Наш опрос</div>
+<div class="block-data">
+	{ {>component:poll('poll_second')} }
+</div>
+{ {/poll_second}}
+
+{{!#poll_random} }
+<div class="block-title">Наш опрос</div>
+<div class="block-data">
+	{ {>component:poll('poll_random')} }
+</div>
+{ {/poll_random}}
+
+{{#demo}}
+<div class="block-title">Техническая информация</div>
+<div class="block-data">
+	<div id="id_uagent" class="f8" style="width: 240px; overflow: auto; display: none;">
+
+		<div class="cn">Mobile_Detect:</div>
+		<div>Десктоп (ПК): Да</div>
+		<div>Мобильное устройство: Нет</div>
+		<div>Планшет: Нет</div>
+		<div>ОС Android: Нет</div>
+
+		<div class="cn">UAgent_Info (detect):</div>
+		<div>Планшет: Нет</div>
+		<div>Айфон: Нет</div>
+		<div>Телефон: Нет</div>
+		<div>ОС Android: Нет</div>
+		<div>Планшет с Andriod: Нет</div>
+		<div>Телефон с Android: Нет</div>
+		<div>iPad: Нет</div>
+		<div>iPod: Нет</div>
+		<div>iPhone: Нет</div>
+		<div>Смартфон: Нет</div>
+
+		<div class="cn">HTTP-заголовки браузера:</div>
+		<div>dubrovo.tw1.ru<br>109.184.108.198<br>109.184.108.198<br>close<br>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36<br>gzip,deflate,sdch<br>ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4<br></div>
+	</div>
+
+	<div class="cn">
+		<input type="button" onclick="$('#id_uagent').show(); $(this).hide();" value="Отобразить" id="id_uagent_but">
+	</div>
+</div>
+{{/demo}}

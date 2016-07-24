@@ -1,0 +1,9 @@
+{{^divider}}<li{{^childsEmpty}} class="dropdown-submenu"{{/childsEmpty}}>
+	<a tabindex="-1" href="{{src}}" class="{{#current}}current{{/current}}" {{#hrefEmpty}}onclick="return false;"{{/hrefEmpty}}>{{name}}</a>
+	{{^childsEmpty}}<ul class="dropdown-menu">{{/childsEmpty}}
+		{{#childs}}
+			{{>gcomponent:mainmenu/submenu}}
+		{{/childs}}
+	{{^childsEmpty}}</ul>{{/childsEmpty}}
+</li>{{/divider}}
+{{#divider}}<li class="divider"></li>{{/divider}}

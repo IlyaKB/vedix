@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	{{>gcommon:head}}
+	
+	<body>
+
+		<div class="main-layer">
+
+			<div class="header-layer">
+				{{>common:header}}
+			</div><!-- .header-layer -->
+
+			{{>gcommon:notification}}
+
+			<div class="middle-layer">
+				<div class="content-layer">
+					<main class="content-main-layer">
+
+						{{#user}}
+						{{#id}}
+
+						TODO POSITIONS
+
+						{{/id}}
+						{{^id}}
+
+						<div style="text-align: center;width:100%;height:100%">
+							<div style="padding-top: 100px; font-size: 16pt">
+								Вы не авторизованы!<br/>
+								<a href="/etton/">Перейти на страницу авторизации</a>
+							</div>
+						</div>
+
+						{{/id}}
+						{{/user}}
+					</main><!-- .content-main-layer -->
+				</div><!-- .content-layer -->
+			</div><!-- .middle-layer -->
+
+		</div><!-- .main-layer -->
+		
+		<div class="footer-layer">
+			{{>common:footer}}
+		</div><!-- footer-layer -->
+		
+		{{!>gcommon:resources_foot}}
+	</body>
+</html>

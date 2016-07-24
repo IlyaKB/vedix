@@ -1,0 +1,35 @@
+<head>
+	<title>{{{title}}}</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<meta http-equiv="Content-Language" content="{{request.language}}"/>
+	{{#meta}}<meta property="{{property}}" content="{{content}}"/>{{/meta}}
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<script src="/core/libs/require.min.js"></script>
+	<script src="/catalog/main.config.js"></script>
+	{{>gcommon:resources_head}}
+	<script type="text/javascript">
+		var wjx_trunk = '{{request.module}}/{{request.component}}';
+		var web_src = '{{page.web_src}}';
+		var web_module = '{{page.web_module}}';
+		var web_data = '{{page.web_data}}';
+		var isbot = false;
+		/*{{#user.isbot}}
+		var isbot = true;
+		$(document).ready( function() {
+			$.post(
+				wjx_trunk,
+				{
+					jx: 'ispeople'
+				},
+				function(data) {
+					data = Utils.getJSONbyText(data);
+					if (! data) return false;
+				},
+				'text'
+			);
+		});
+		{{/user.isbot}}*/
+	</script>
+
+	{{>gcommon:counter_ga}}
+</head>

@@ -1,0 +1,56 @@
+<!-- ko with: spec -->
+
+<div class="etton-spec">
+
+	<div class="spec-controls">
+		<button data-bind="click: clickAdd, enable: $parent.id(), css: { disable: ! $parent.id() }">Добавить товар...</button>
+	</div>
+
+	<table>
+		<thead>
+		<tr>
+			<th>п/п</th>
+			<th>Название</th>
+			<th>Подтип</th>
+			<th>Кол-во</th>
+			<th>Операции</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- ko foreach: items -->
+		<tr>
+			<td data-bind="text: index()+'.', attr: { title: 'ID='+id}">1.</td>
+			<td data-bind="text: name, attr: { title: 'position_id='+position_id}">Карандаш</td>
+			<td data-bind="text: subtype_name, attr: { title: 'subtype_id='+subtype_id}"></td>
+			<td>
+				<input type="text" data-bind="value: quantity"/>
+				<button data-bind="click: $parent.quantityDeincClick">&lt;</button>
+				<button data-bind="click: $parent.quantityIncClick">&gt;</button>
+			</td>
+			<td><button data-bind="click: $parent.clickDelete">Удалить</button></td>
+		</tr>
+		<!-- /ko -->
+		</tbody>
+		<tfoot>
+		<!-- ko if: ! items().length -->
+		<tr><td colspan="5"><div style="text-align: center">Товаров нет</div></td></tr>
+		<!-- /ko -->
+		</tfoot>
+	</table>
+
+	{{!TODO: SelectControl-компонент для выбора подтипа:
+	<span class="arr-down" data-bind="click: subtype.showListPopup"><span></span></span>
+	<input class="active" type="text" placeholder="Компания" data-bind="value: subtype.name, valueUpdate: 'afterkeydown'" name="subtype_name">
+	<div id="subtypes_popup" class="subtypes_popup" style="display: none">
+		<div data-bind="visible: ! subtype.listCount()" style="display: none">Подтипов не найдено</div>
+		<div data-bind="foreach: subtype.list">
+			<label data-bind="attr: { 'data-url-name': url_name }, click: $parent.subtype.onListOptionClick, visible: visible">
+				<span data-bind="text: name"></span>
+			</label>
+		</div>
+		<div><img src="/data/etton/progress_32_0.gif" alt="Загрузка..."/></div>
+	</div>}}
+
+</div>
+
+<!-- /ko -->

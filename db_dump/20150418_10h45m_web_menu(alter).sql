@@ -1,0 +1,3 @@
+-- #37 2015.04.18 10:45:00
+
+ALTER TABLE `web_menu` ADD `regexp_current` VARCHAR(64) NULL DEFAULT NULL AFTER `tag`;

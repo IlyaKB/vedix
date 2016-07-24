@@ -1,0 +1,41 @@
+div.etton-spec div.spec-controls {
+  padding: 3px;
+  text-align: left;
+}
+div.etton-spec div.spec-controls button.disable {
+  color: #aaa;
+}
+div.etton-spec table {
+  width: 800px;
+  border-collapse: collapse;
+}
+div.etton-spec table caption {
+  font-weight: bold;
+  text-align: left;
+}
+div.etton-spec table td,
+div.etton-spec table th {
+  border: 1px solid gray;
+  padding: 5px;
+}
+div.etton-spec table td:nth-of-type(1) {
+  text-align: center;
+  width: 60px;
+}
+div.etton-spec table td:nth-of-type(4) {
+  text-align: center;
+  width: 135px;
+}
+div.etton-spec table td:nth-of-type(4) input {
+  width: 50px;
+}
+div.etton-spec table td:nth-of-type(5) {
+  text-align: center;
+  background-color: #fafafa;
+  width: 165px;
+}
+div.etton-spec table th {
+  text-align: center;
+  padding: 3px 15px 3px 15px;
+  background-color: #f3f3f3;
+}

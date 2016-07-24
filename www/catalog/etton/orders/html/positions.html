@@ -1,0 +1,39 @@
+<!-- ko with: positions -->
+
+<div class="etton-positions" style="display: none" data-bind="visible: visible">
+	<table>
+		<caption>Выберите товар:</caption>
+		<thead>
+			<tr>
+				<th>ИД</th>
+				<th>Название</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody data-bind="css: { 'loading': loading() }">
+			<!-- ko foreach: items -->
+			<tr data-bind="click: $parent.clickRow">
+				<td data-bind="text: id, attr: { title: 'subtypes_count='+subtypes_count}"></td>
+				<td data-bind="text: name"></td>
+				<td data-bind="text: +subtypes_count ? '...' : ''"></td>
+			</tr>
+			<!-- /ko -->
+		</tbody>
+		<tfoot>
+			<tr data-bind="visible: loading()"><td colspan="3"><div style="text-align: center">Товары загружаются...</div></td></tr>
+			<tr data-bind="visible: ! loading() && ! items().length"><td colspan="3"><div style="text-align: center">Товары отсутствуют</div></td></tr>
+		</tfoot>
+	</table>
+
+	<div class="positions-control">
+		<ul>
+			<li><button data-bind="click: updateList">Refresh</button></li>
+			<li><button data-bind="click: cancelClick">Закрыть</button></li>
+		</ul>
+	</div>
+
+</div>
+
+{{>orders/html/subtypes}}
+
+<!-- /ko -->

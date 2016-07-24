@@ -1,0 +1,141 @@
+div.etton-subtypes {
+  z-index: 1001;
+  cursor: default;
+  position: fixed;
+  left: 50%;
+  top: 275px;
+  width: 300px;
+  min-height: 50px;
+  margin-left: -150px;
+  padding: 5px;
+  background-color: #fdf5ce;
+  border-radius: 5px;
+  border: 2px outset #ddd;
+}
+div.etton-subtypes table {
+  border-collapse: collapse;
+  width: 100%;
+}
+div.etton-subtypes table caption {
+  text-align: left;
+  font: bold 14pt Arial;
+}
+div.etton-subtypes table th,
+div.etton-subtypes table td {
+  border: 1px solid gray;
+  padding: 3px;
+}
+div.etton-subtypes table td {
+  background-color: white;
+}
+div.etton-subtypes table th {
+  background-color: #f3f3f3;
+  text-align: center;
+}
+div.etton-subtypes table tbody tr:hover td {
+  background-color: #ffe45c;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.etton-subtypes table tbody.loading td {
+  background-color: #f6f6f6;
+  color: gray;
+}
+div.etton-subtypes div.subtypes-control {
+  margin-top: 5px;
+}
+div.etton-subtypes div.subtypes-control ul {
+  list-style: none;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+div.etton-subtypes div.subtypes-control ul li {
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 2px;
+  padding-left: 10px;
+  float: left;
+}
+div.etton-subtypes div.subtypes-control ul li:nth-of-type(1) {
+  width: 99%;
+  text-align: right;
+}
+div.etton-positions {
+  z-index: 1001;
+  cursor: default;
+  position: fixed;
+  left: 50%;
+  top: 250px;
+  width: 500px;
+  min-height: 100px;
+  margin-left: -250px;
+  padding: 5px;
+  background-color: #fdf5ce;
+  border-radius: 5px;
+  border: 2px outset #ddd;
+}
+div.etton-positions table {
+  border-collapse: collapse;
+  width: 100%;
+}
+div.etton-positions table caption {
+  text-align: left;
+  font: bold 14pt Arial;
+}
+div.etton-positions table th,
+div.etton-positions table td {
+  border: 1px solid gray;
+  padding: 3px;
+}
+div.etton-positions table td {
+  background-color: white;
+}
+div.etton-positions table th {
+  background-color: #f3f3f3;
+  text-align: center;
+}
+div.etton-positions table th:nth-of-type(1),
+div.etton-positions table td:nth-of-type(1) {
+  width: 60px;
+  text-align: center;
+}
+div.etton-positions table th:nth-of-type(3),
+div.etton-positions table td:nth-of-type(3) {
+  width: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+div.etton-positions table tbody tr:hover td {
+  background-color: #ffe45c;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.etton-positions table tbody.loading td {
+  background-color: #f6f6f6;
+  color: gray;
+}
+div.etton-positions div.positions-control {
+  margin-top: 5px;
+}
+div.etton-positions div.positions-control ul {
+  list-style: none;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+}
+div.etton-positions div.positions-control ul li {
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 2px;
+  padding-left: 10px;
+  float: left;
+}
+div.etton-positions div.positions-control ul li:nth-of-type(1) {
+  width: 33%;
+  text-align: left;
+}
+div.etton-positions div.positions-control ul li:nth-of-type(2) {
+  width: 66%;
+  text-align: right;
+}

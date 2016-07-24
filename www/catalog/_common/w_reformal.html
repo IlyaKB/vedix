@@ -1,0 +1,24 @@
+{{#developer_mode}}
+<img src="/data/site/reformal_demo.png" alt="" style="position: fixed; top: 50%; margin-top: -150px"/>
+{{/developer_mode}}
+{{#is_production}}
+<script type="text/javascript">
+    var reformalOptions = {
+        project_id: {{config.site.reformal_project_id}},
+        project_host: "{{config.site.reformal_project_host}}",
+        tab_orientation: "left",
+        tab_indent: "50%",
+        tab_bg_color: "#F05A00",
+        tab_border_color: "#FFFFFF",
+        tab_image_url: "{{config.site.reformal_tab_image_url}}",
+        tab_border_width: 2
+    };
+    
+    (function() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript'; script.async = true;
+        script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'media.reformal.ru/widgets/v3/reformal.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+    })();
+</script><noscript><a href="http://reformal.ru"><img src="http://media.reformal.ru/reformal.png" /></a><a href="http://web-applications.reformal.ru">Обратная связь, предложения</a></noscript>
+{{/is_production}}

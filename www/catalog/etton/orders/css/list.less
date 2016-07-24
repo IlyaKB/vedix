@@ -1,0 +1,66 @@
+#etton_list_static {
+	display: none;
+}
+
+div.list-controls {
+	padding: 3px;
+	text-align: left;
+}
+
+div.etton-list {
+	table {
+		width: 800px;
+		border-collapse: collapse;
+		tbody tr:hover td {
+			background-color: #ffe45c;
+			cursor: pointer;
+			&:nth-of-type(1) {
+				background-color: #e8b957;
+			}
+		}
+		tbody.loading td {
+			background-color: #f6f6f6;
+			color: gray;
+		}
+		td, th {
+			border: 1px solid gray;
+			padding: 5px;
+		}
+		td {
+			background-color: white;
+		}
+		td:nth-of-type(1), th:nth-of-type(1) {
+			background-color: #f3f3f3;
+			padding: 6px;
+		}
+		td:nth-of-type(3) {
+			text-align: center;
+		}
+		td:nth-of-type(5) {
+			text-align: right;
+		}
+		th:nth-of-type(6), td:nth-of-type(6) {
+			width: 175px;
+		}
+		td:nth-of-type(6) {
+			background-color: #fafafa;
+		}
+		th {
+			text-align: center;
+			padding: 3px 15px 3px 15px;
+			background-color: #f3f3f3;
+			&.sortable {
+				cursor: pointer;
+				&:hover {
+					color: #f00
+				}
+			}
+			span {
+				color: red
+			}
+		}
+		tfoot tr td {
+			background-color: white;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+<!-- ko with: list.detail -->
+
+<div class="form-caption" data-bind="visible: ! id()">Создание нового заказа</div>
+<div class="form-caption" data-bind="visible: id()">Заказ № <span data-bind="text: number()"></span></div>
+
+<div class="etton-detail">
+
+	<label>
+		<ul>
+			<li>Номер</li>
+			<li><input type="text" placeholder="До 20 символов" data-bind="value: number, valueUpdate: 'afterkeydown'"/></li>
+		</ul>
+	</label>
+	<label>
+		<ul>
+			<li>Дата создания</li>
+			<li><input type="text" readonly="readonly" value="21.07.2016" class="readonly" data-bind="value: createdate"/></li>
+		</ul>
+	</label>
+	<label>
+		<ul>
+			<li>Заказчик</li>
+			<li><input type="text" placeholder="До 128 символов" data-bind="value: customer, valueUpdate: 'afterkeydown'"/></li>
+		</ul>
+	</label>
+
+	<div data-bind="visible: id()">
+		{{>orders/html/spec}}
+	</div>
+
+	<div class="detail-controls">
+		<button data-bind="click: cancelClick, text: id() ? 'Закрыть' : 'Отмена'">Отмена</button>
+		<button data-bind="click: saveClick, text: id() ? 'Сохранить' : 'Добавить'">Сохранить</button>
+	</div>
+
+</div>
+
+<!-- /ko -->

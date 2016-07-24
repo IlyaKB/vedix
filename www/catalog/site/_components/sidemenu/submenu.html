@@ -1,0 +1,18 @@
+{{#divider}}
+	<li class="divider"></li>
+{{/divider}}
+{{^divider}}
+	{{#childsEmpty}}
+		<li><a href="{{src}}">{{name}}</a></li>
+	{{/childsEmpty}}
+	{{^childsEmpty}}
+		<li class="dropdown-submenu">
+			<a tabindex="-1" href="{{src}}">{{name}}</a>
+			<ul class="dropdown-menu">
+				{{#childs}}
+					{{>_components/sidemenu/submenu}}
+				{{/childs}}
+			</ul>
+	{{/childsEmpty}}
+</li>
+{{/divider}}

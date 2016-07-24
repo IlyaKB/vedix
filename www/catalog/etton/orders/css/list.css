@@ -1,0 +1,65 @@
+#etton_list_static {
+  display: none;
+}
+div.list-controls {
+  padding: 3px;
+  text-align: left;
+}
+div.etton-list table {
+  width: 800px;
+  border-collapse: collapse;
+}
+div.etton-list table tbody tr:hover td {
+  background-color: #ffe45c;
+  cursor: pointer;
+}
+div.etton-list table tbody tr:hover td:nth-of-type(1) {
+  background-color: #e8b957;
+}
+div.etton-list table tbody.loading td {
+  background-color: #f6f6f6;
+  color: gray;
+}
+div.etton-list table td,
+div.etton-list table th {
+  border: 1px solid gray;
+  padding: 5px;
+}
+div.etton-list table td {
+  background-color: white;
+}
+div.etton-list table td:nth-of-type(1),
+div.etton-list table th:nth-of-type(1) {
+  background-color: #f3f3f3;
+  padding: 6px;
+}
+div.etton-list table td:nth-of-type(3) {
+  text-align: center;
+}
+div.etton-list table td:nth-of-type(5) {
+  text-align: right;
+}
+div.etton-list table th:nth-of-type(6),
+div.etton-list table td:nth-of-type(6) {
+  width: 175px;
+}
+div.etton-list table td:nth-of-type(6) {
+  background-color: #fafafa;
+}
+div.etton-list table th {
+  text-align: center;
+  padding: 3px 15px 3px 15px;
+  background-color: #f3f3f3;
+}
+div.etton-list table th.sortable {
+  cursor: pointer;
+}
+div.etton-list table th.sortable:hover {
+  color: #ff0000;
+}
+div.etton-list table th span {
+  color: #ff0000;
+}
+div.etton-list table tfoot tr td {
+  background-color: white;
+}
