@@ -4,3 +4,4 @@
 /www/catalog/*.map
 /www/logs/*.log
 /www/*.html
+/www/catalog/site/*.map

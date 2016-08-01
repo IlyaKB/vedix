@@ -21,13 +21,11 @@ class TObject { }
  */
 class ConfigCatalog {
 	
-	static private $instance;
 	static private $ini = Array();
 	static private $iniAdmin = Array();
 	static private $map = null;
 	
-	public function __construct() {
-		if (!self::$instance) self::$instance = $this;
+	static public function init() {
 		self::$map = new TObject();
 		self::$ini = parse_ini_file(HD_ROOT . 'catalog.ini', true);
 		foreach (self::$ini as $key => &$item) {
@@ -135,13 +133,6 @@ class ConfigCatalog {
 		return 'unknownApplication';
 	}
 
-	static public function getInstance() {
-		if (! self::$instance) {
-			self::$instance = new self ( );
-		}
-		return self::$instance;
-	}
-	
 	static public function isApplication($code) {
 		return array_key_exists($code, self::$ini);
 	}
@@ -151,7 +142,7 @@ class ConfigCatalog {
 		return array_key_exists($code, $app);
 	}
 }
-$_ConfigCatalog = new ConfigCatalog();
+ConfigCatalog::init();
 
 require_once( HD_ROOT . 'core/utils.php');
 require_once( HD_ROOT . 'core/logger.php');
