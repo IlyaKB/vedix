@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	{{>gcommon:head}}
+	<body>
+		<div class="main-layer">
+			<div class="header-layer">
+				{{>gcommon:header}}
+			</div><!-- .header-layer -->
+			{{>gcommon:notification}}
+			<div class="middle-layer">
+				<div class="content-layer">
+					<main class="content-main-layer">
+						{{#magazin}}
+						
+						{{#list}}
+						
+							{{^category}}<div style="font-size: 20pt; font-weight: bold; padding-left: 10px">Интернет-магазин "Домашняя кухня"</div>{{/category}}
+							
+							{{#category}}
+							<div class="breadcrumbs">
+								<a href="/magazin">В начало</a>
+								{{#category}}
+								&gt;&gt; <a href="/magazin/index/{{url_name}}">Категория: {{name}}</a>
+								{{/category}}
+							</div>
+							{{/category}}
+
+							{{>index/html/filters}}
+							
+							{{>index/html/sorting}}
+							
+							<!-- ko with: list -->
+							
+							{{#pagination}}<div style="margin-top: -15px"></div>{{/pagination}}
+							{{>gcomponent:pagination/pagination_static}}
+							{{>gcomponent:pagination}}
+							
+							{{>index/html/list}}
+							
+							{{>gcomponent:pagination}}
+							
+							<!-- /ko -->
+						
+						{{/list}}
+						
+						{{#detail}}
+						{{>index/html/detail}}
+						{{#isallowcomments}}
+						<!-- ko with: detail -->
+						{{>gcomponent:comments}}
+						<!-- /ko -->
+						{{/isallowcomments}}
+						{{/detail}}
+						
+						{{/magazin}}
+					</main><!-- .content-main-layer -->
+				</div><!-- .content-layer -->
+				<div class="left-layer">
+					{{>common:left}}
+				</div><!-- .left-layer -->
+			</div><!-- .middle-layer -->
+		</div><!-- .main-layer -->
+		
+		<div class="footer-layer">
+			{{>gcommon:footer}}
+		</div><!-- footer-layer -->
+		
+		{{>gcommon:resources_foot}}
+	</body>
+</html>

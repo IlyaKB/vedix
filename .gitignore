@@ -1,3 +1,6 @@
 /www/caches/mustache/*.php
 /www/caches/cache/*.dat
 /www/caches/cache/*.t
+/www/catalog/*.map
+/www/logs/*.log
+/www/*.html

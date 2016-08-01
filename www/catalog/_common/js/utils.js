@@ -1,5 +1,55 @@
 /// <reference path="../../../core/libs/_def/jquery.d.ts"/>
 define(["require", "exports", 'jquery', './notifications'], function (require, exports, $, Notifications) {
+    /*
+    function SomeClass(startValue) {
+        var privateCount = startValue;
+        function creator() {
+            return (++privateCount)+'/'+(++creator.publicCounter);
+        };
+        creator.publicCounter = startValue;
+        return creator;
+    }
+    console.log(SomeClass(20)() );
+    var counter1 = SomeClass(0);
+    var counter2 = SomeClass(10);
+    console.log( 'counter1()=' + counter1() + ', counter2()=' + counter2() );
+    console.log( 'counter1()=' + counter1() + ', counter2()=' + counter2() );
+    console.log( 'counter1.privateCount='+counter1.privateCount +', counter2.privateCount='+counter2.privateCount);
+    console.log( 'counter1.publicCounter='+counter1.publicCounter +', counter2.publicCounter='+counter2.publicCounter);
+    /**/
+    /*
+    var value = 0;
+    function f() {
+        value = true;
+        if (1) {
+    
+        } else {
+            //value = false;
+            var value = false;
+        }
+        console.log( 'f(), value='+value );
+    }
+    f();
+    console.log('value='+value);
+    /**/
+    var fullname = 'Вася';
+    var obj = {
+        fullname: 'Петя',
+        prop: {
+            fullname: 'Маша',
+            getFullname: function () {
+                return this.fullname;
+            }
+        }
+    };
+    //console.log(obj.prop.getFullname());
+    var test = obj.prop.getFullname;
+    console.log(test());
+    for (var i = 0; i < 10; i++) {
+        setTimeout(function () {
+            console.log(i);
+        }, 100);
+    }
     var Utils = (function () {
         function Utils() {
         }

@@ -32,8 +32,6 @@ class SitePage extends BasePage {
 		$(document).ready(()=>{
 
 			$('#admin_link').attr('href', '/admin');
-			$('#demo_off').attr('href', '?demo=0');
-			$('#demo_on').attr('href', '?demo=1');
 
 			$('#id_uagent').hide().click(()=>{
 			  $('#id_uagent').hide();

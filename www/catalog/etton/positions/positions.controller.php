@@ -1,8 +1,10 @@
 <?php
+namespace VediX;
+
 /**
  * PositionsController
  */
-class PositionsController extends EttonController {
+final class PositionsController extends EttonController {
 	
 	const TTL = 1;
 	const CELL_COUNT = 12;

@@ -1,4 +1,6 @@
 <?php
+namespace VediX;
+
 class CatalogModel extends PageModel {
 
 	// TODO: сделать подключение ресурсов в ОДИН ОБЪЕКТ неким методом (а то не порядок...)

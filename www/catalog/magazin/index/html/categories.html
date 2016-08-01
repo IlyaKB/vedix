@@ -1,0 +1,20 @@
+{{#magazin}}
+<div id="mag_categories" class="mag-categories">
+	<table width="210px">
+		<tbody>
+			<tr class="category">
+				<td {{^category}}class="current"{{/category}}>
+					<a href="/magazin">Все товары и услуги</a>
+				</td>
+			</tr>
+			{{#categories}}
+			<tr class="category">
+				<td {{#is_current}}class="current"{{/is_current}}>
+					<span>&bull;&nbsp;</span><a href="/magazin/index/{{url_name}}">{{name}}</a>
+				</td>
+			</tr>
+			{{/categories}}
+		</tbody>
+	</table>
+</div>
+{{/magazin}}

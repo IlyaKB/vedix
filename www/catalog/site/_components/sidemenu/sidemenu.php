@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 class SidemenuController extends Controller {
 	

@@ -1,0 +1,75 @@
+<div data-bind="with: comments, visible: true" class="vdx-comments" style="display: none">
+	
+	<div class="comments-title">Комментарии</div>
+	
+	<form class="main-form">
+		<div data-bind="visible: ! $root.user.id()">
+			<input type="text" data-bind="value: authorName, css: { 'alert-error': authorNameError }" placeholder="Ваше имя" class="fullname"/>
+			<input type="text" data-bind="value: email, css: { 'alert-error': emailError }" placeholder="Email" class="email"/>
+		</div>
+		<div>
+			<textarea placeholder="Текст комментария..." data-bind="value: text, css: { 'alert-error': textError }"></textarea>
+		</div>
+		<div class="controls">
+			<span class="errors" data-bind="text: errorText"></span>
+			<button type="submit" data-bind="click: onSubmit" onclick="return false;">Отправить</button>
+		</div>
+	</form>
+	
+	<div data-bind="visible: items().length">
+		
+		<!-- ko foreach: items -->
+		<div class="vdx-comment">
+
+			<div class="comment-header">
+				<a href="#" data-bind="text: author_name, visible: author_id, attr: { href: '/profile/'+author_id }"></a>
+				<span data-bind="text: author_name, visible: ! author_id"></span> | 
+				<span data-bind="text: creation_date"></span>
+				<span data-bind="text: '#'+index()"></span>
+			</div>
+			<div class="comment-table-row">
+				<div class="comment-photo"><img src="/data/empty.png" data-bind="attr: { src: photo }"/></div>
+				<div data-bind="html: text" class="comment-body"></div>
+			</div>
+			<div class="comment-footer">
+				<a href="#" data-bind="click: $parent.showReplyForm" onclick="return false">Ответить</a> | 
+				<span class="voting dislike js-dislike" data-bind="click: $parent.vote, event: { mouseover: $parent.votingMouseOver, mouseout: $parent.votingMouseOut }">
+					<img src="/data/site/voting/down.png"/> <span data-bind="text: counter_dislike"></span>
+				</span> | 
+				<span class="voting like js-like" data-bind="click: $parent.vote, event: { mouseover: $parent.votingMouseOver, mouseout: $parent.votingMouseOut }">
+					<img src="/data/site/voting/up.png"/> <span data-bind="text: counter_like"></span>
+				</span>
+			</div>
+			
+			<div data-bind="visible: replies().length" class="replies-title"><a href="#" data-bind="text: replies_visible() ? 'Ответы (скрыть)' : 'Показать ответы (' + replies().length + ')', click: function(){ replies_visible(! replies_visible()); }"></a></div>
+			
+			<div data-bind="visible: replies_visible, foreach: replies">
+				<div class="comment-reply">
+					<div class="reply-header">
+						<a href="#" data-bind="text: author_name, visible: author_id, attr: { href: '/profile/'+author_id }"></a>
+						<span data-bind="text: author_name, visible: ! author_id"></span> | 
+						<span data-bind="text: creation_date"></span>
+						<span data-bind="text: '#'+index()"></span>
+					</div>
+					<div class="reply-table-row">
+						<div class="reply-photo"><img src="/data/empty.png" data-bind="attr: { src: photo }"/></div>
+						<div data-bind="html: text" class="reply-body"></div>
+					</div>
+					<div class="reply-footer">
+						<span class="voting dislike js-dislike" data-bind="click: $parents[1].vote, event: { mouseover: $parents[1].votingMouseOver, mouseout: $parents[1].votingMouseOut }">
+							<img src="/data/site/voting/down.png"/> <span data-bind="text: counter_dislike"></span>
+						</span> |
+						<span class="voting like js-like" data-bind="click: $parents[1].vote, event: { mouseover: $parents[1].votingMouseOver, mouseout: $parents[1].votingMouseOut }">
+							<img src="/data/site/voting/up.png"/> <span data-bind="text: counter_like"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /ko -->
+	</div>
+	<div data-bind="visible: ! items().length" class="comments-title" style="display: none">Комментариев нет</div>
+</div>
+
+{{>gcomponent:comments/sourcedata}} <!-- TODO: не находит!!! -->

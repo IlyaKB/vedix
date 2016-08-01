@@ -1,0 +1,13 @@
+<div class="loginform-inputs" style="padding: 5px">
+	<div>Логин/e-mail:</div>
+	<div><input type="text" id="user_login" style="width: 150px"></div>
+	<div>Пароль:</div>
+	<div><input type="password" id="user_password" style="width: 150px"></div>
+</div>
+<div class="loginform-go">
+	<input type="button" class="button" value="Вход" style="width: 50px" onclick="User.login();">
+	<a href="#" class="f8 u">Забыл пароль</a>
+</div>
+<div class="loginform-ulogin">
+	<a href="#" id="{{config.main.ulogin_id}}" data-ulogin="{{config.main.ulogin_params}}" onclick="return false;"><img src="//ulogin.ru/img/button.png" width=187 height=30 alt="МультиВход"/></a>
+</div>

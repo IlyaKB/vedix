@@ -1,0 +1,63 @@
+<!-- DYNAMIC CONTENT -->
+<div id="mag_list" class="mag-list" data-bind="foreach: positions, visible: true" style="display: none;">
+	<div class="box">
+		<div class="name"><a href="#" data-bind="attr: { href: '/magazin/index/'+category_url_name+'/'+url_name }, html: name">Название</a></div>
+		<div class="photo">
+			<a href="#" data-bind="attr: { href: '/magazin/index/'+category_url_name+'/'+url_name }">
+				<img src="/data/magazin/photo_no.png" alt="" data-bind="attr: { src: photo_url, alt: name_alt }"/>
+			</a>
+		</div>
+		<div class="bottom-info">
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<span data-bind="text: quantity + ' ' + measure_name, visible: quantity">1 у.е.</span>
+							<span data-bind="visible: ! is_alloworder && ! is_available">инд.заказ</span>
+						</td>
+						<td>
+							<span class="price" data-bind="html: price + ' <i class=\'fa fa-rub\'></i>', visible: is_alloworder && is_available">1000 руб.</span>
+							<span data-bind="visible: ! is_alloworder">Пока не выпускается</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="controls">
+			<a href="#" data-bind="visible: ! is_alloworder, attr: { href: '/magazin/index/'+category_url_name+'/'+url_name }">Подробнее...</a>
+			<button data-bind="visible: is_alloworder && is_available, click: $root.addClick">Добавить в корзину</button> <span data-bind="visible: order_count"><span data-bind="text: '(' + order_count() + ')'" class="order-count" title="Количество заказанного товара">(0)</span> <span data-bind="click: $root.delClick" class="delete">×</span></span>
+			<button data-bind="visible: is_alloworder && ! is_available, click: $root.preOrderClick">Предварительный заказ</button>
+		</div>
+	</div>
+</div>
+<!-- /DYNAMIC CONTENT -->
+
+<div style="min-height: 360px;" data-bind="visible: false"></div>
+
+<!-- STATIC SOURCE -->
+<div id="mag_list_static" data-bind="sourcedata: positions, visible: false" data-sd-type="observableArray">
+	{{#items}}
+	<section data-sd-type="object">
+		<hr/>
+		<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+		<input type="hidden" data-sd-field="category_url_name" value="{{category_url_name}}"/>
+		<input type="hidden" data-sd-field="url_name" value="{{url_name}}"/>
+		<input type="hidden" data-sd-field="name_alt" value="{{name}}"/>
+		<input type="hidden" data-sd-field="is_alloworder" data-sd-type="boolean" value="{{is_alloworder}}"/>
+		<input type="hidden" data-sd-field="is_available" data-sd-type="boolean" value="{{is_available}}"/>
+		<input type="hidden" data-sd-field="photo_url" value="{{photo_url}}"/>
+		<h2 data-sd-field="name">{{{name}}}</h2>
+		<img src="{{photo_url}}" alt="{{name}}"/>
+		<div>
+			<span data-sd-field="quantity">{{quantity}}</span> |
+			<span data-sd-field="measure_name">{{measure_name}}</span> |
+			<span data-sd-field="price">{{price}}</span> |
+			<span data-sd-field="order_count" data-sd-type="observable<boolean>">{{order_count}}</span>
+		</div>
+		<div>
+			<a href="/magazin/index/{{category_url_name}}/{{url_name}}">Подробнее</a>
+		</div>
+	</section>
+	{{/items}}
+</div>
+<!-- /STATIC SOURCE -->

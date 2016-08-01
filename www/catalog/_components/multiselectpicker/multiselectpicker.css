@@ -1,0 +1,30 @@
+.multiselectpicker {}
+.multiselectpicker > div > input {
+	margin: 3px;
+	width: 196px;
+}
+.multiselectpicker > div > ul {
+	padding-left: 3px;
+	max-width: 200px;
+	max-height: 200px;
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	min-height: 50px;
+	list-style: none;
+}
+.multiselectpicker > div > ul > li {
+	white-space: nowrap;
+}
+.multiselectpicker > div > ul > li input {
+	margin-left: 3px;
+}
+.multiselectpicker > div > ul > li:hover {
+	background-color: #269abc;
+	color: white;
+	cursor: pointer;
+}
+.multiselectpicker > div > ul > li.active {
+	background-color: #2a6496;
+	color: white;
+}

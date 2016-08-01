@@ -1,0 +1,84 @@
+<div class="mag-detail" data-bind="with: detail">
+	<div class="breadcrumbs">
+		<a href="/magazin">В начало</a>
+		{{#category}}
+		&gt;&gt; <a href="/magazin/index/{{url_name}}">Категория: {{name}}</a>
+		{{/category}}
+	</div>
+	<hr/>
+	<h1><a href="/magazin/index/{{category_url_name}}/{{url_name}}">{{{name}}}</a></h1>
+	<div class="info-top">
+		{{#manufacturer}}<span>Изготовитель: <a href="/magazin/manufacturers/{{id}}">{{name}}</a></span> | {{/manufacturer}}
+		<span>Размещено: <span>{{{dateplacement}}}</span></span> | 
+		<span>Просмотров: <span data-bind="text: hitsPrint">{{hitsPrint}}</span></span>
+	</div>
+	<div class="main">
+		<div class="main-photo">
+			<div class="title">ОПИСАНИЕ</div>
+			<img src="{{photo_url}}" alt="{{name_alt}}" style="width: 300px"/>
+		</div>
+		{{#composition}}
+		<div class="composition">
+			<div class="title">СОСТАВ:</div>
+			<table cellspacing="0px">
+				<thead>
+					<tr>
+						<th>№</th>
+						<th>Название</th>
+						<th>Кол-во</th>
+						<th>Ед.изм.</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#items}}
+					<tr>
+						<td>{{number}}.</td>
+						<td>{{name}}</td>
+						<td style="padding-right: 6px">{{quantity}}</td>
+						<td>{{measure_name_short}}</td>
+					</tr>
+					{{/items}}
+				</tbody>
+			</table>
+		</div>
+		{{/composition}}
+		
+		{{#featurephotos}}
+		<div id="feature_photos" class="feature-photos">
+			<div class="title">&nbsp;ГАЛЕРЕЯ</div>
+			{{#items}}
+			<div class="photo"><a href="{{photo_url}}" target="_blank" class="gallery"><img src="{{photo_url}}" alt="{{name_alt}}"/></a></div>
+			{{/items}}
+		</div>
+		{{/featurephotos}}
+		
+		<div class="body">
+			{{{description}}}
+		</div>
+	</div>
+	
+	<div class="controls">
+		{{#is_alloworder}}{{#is_available}}<button data-bind="click: $root.addClick">Добавить в корзину</button> <span data-bind="visible: order_count" style="display: none"><span data-bind="text: '(' + order_count() + ')'" class="order-count" title="Количество заказанного товара">(0)</span> <span data-bind="click: $root.delClick" class="delete">×</span></span>{{/is_available}}{{/is_alloworder}}
+		{{#is_alloworder}}{{^is_available}}<button data-bind="click: $root.preOrderClick">Предварительный заказ</button>{{/is_available}}{{/is_alloworder}}
+	</div>
+	
+	<div class="info-bottom">
+		<table width="100%">
+			<tbody>
+				<tr valign="top">
+					<td>
+						<div>
+							{{#isallowvote}}{{>component:voting}}{{/isallowvote}}
+						</div>
+						<div>
+							{{#isallowcomments}}<span>Комментариев: <span>{{comments_count}}</span></span>{{/isallowcomments}}
+						</div>
+					</td>
+					<td class="share">
+						{{>gcommon:w_share}}
+					</td>
+				<tr>
+			</tbody>
+		</table>
+	</div>
+</div>

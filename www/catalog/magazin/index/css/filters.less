@@ -1,0 +1,187 @@
+div.mag-filters {
+
+	font-weight: bold;
+	padding: 0px 10px;
+
+	table {
+		tr {
+			td {
+				padding: 2px;
+				white-space: nowrap;
+				&:last-child {
+					width: 100%;
+					text-align: right;
+					a {
+						font-weight: lighter;
+						color: #666;
+						border-color: #666;
+						border-bottom: 1px dotted #08c;
+						&:hover {
+							color: red;
+							border-color: red;
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	div.tags {
+		background-color: #f5f5fa;
+		margin: 5px 0px;
+		border-radius: 20px;
+		padding: 5px;
+		cursor: default;
+		text-align: left;
+		font-weight: lighter;
+
+		span {
+			background: #fff7cd;
+			border-radius: 10px;
+			font-size: 12px;
+			color: #666;
+			display: inline-block;
+			height: 22px;
+			margin: 2px 0px;
+			padding: 0 20px 0 5px;
+			position: relative;
+			white-space: nowrap;
+			border: 1px dashed gray;
+			span.name {
+				border-width: 0px;
+				padding: 0 5px;
+				font-size: 12px;
+				color: #666;
+				white-space: nowrap;
+				height: 16px;
+			}
+			span.close {
+				border-width: 0px;
+				position: absolute;
+				right: 0;
+				border-radius: 0 5px 5px 0;
+				text-align: center;
+				width: 20px;
+				font-size: 18px;
+				color: #858481;
+				cursor: pointer;
+				background: #fffceb;
+				&:hover {
+					color: red;
+				}
+			}
+		}
+		span.clear {
+			cursor: pointer;
+			background: #f6f6f6;
+			border-radius: 10px;
+			font-size: 12px;
+			display: inline-block;
+			height: 22px;
+			margin: 2px 0px;
+			padding: 0 5px;
+			position: relative;
+			white-space: nowrap;
+			border: 1px dashed darkred;
+			span.name {
+				background: #f6f6f6;
+				border-width: 0px;
+				padding: 0 5px;
+				font-size: 12px;
+				color: darkred;
+				white-space: nowrap;
+				height: 16px;
+			}
+			&:hover {
+				border-color: red;
+				span {
+					color: red;
+				}
+			}
+		}
+	}
+}
+
+div.mag-filters-popup {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 500px;
+	height: 255px;
+	z-index: 1000;
+	background-color: #fefefe;
+	padding: 5px 10px 10px;
+	text-align: left;
+	border-radius: 10px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #eee #aaa #aaa #eee;
+
+	font-size: 11pt;
+	label {
+		font-size: 11pt;
+		font-weight: lighter;
+	}
+	input.cb {
+		margin: 0px;
+		padding: 0px;
+		vertical-align: -5%;
+	}
+	div.header {
+		font-size: 12pt;
+		font-weight: bold;
+		cursor: move;
+		margin-right: 20px;
+		&:hover {
+			color: #555;
+		}
+	}
+	div.close {
+		float: right;
+		font-size: 18pt;
+		cursor: pointer;
+		margin-left: 400px;
+		margin-top: -22px;
+		height: 22px;
+		&:hover {
+			color: red;
+		}
+	}
+
+	div.price {
+		font-weight: bold;
+	}
+}
+
+
+div.slider-wrapper {
+	width: 440px;
+	margin: 15px 10px 20px;
+
+	& > div.slider-range {
+		position: relative;
+		height:6px;
+
+		background: #d6d6d6;       //override jQueryUI styles
+		border: 0;              //override jQueryUI styles
+		border-radius: 5px;
+
+		& > div.ui-slider-range {
+			background: #85be4b;
+			box-shadow: none;
+		}
+
+		& > a {
+			height: 27px;
+			top: -10px;
+			margin: 0 0 0 -7px;
+
+			border: 0; //override jQueryUI styles
+			background: url("/catalog/magazin/_common/img/slider-handle-oval2.png") no-repeat;
+
+			&:focus {
+				outline: 0; //override jQueryUI styles
+			}
+		}
+	}
+}

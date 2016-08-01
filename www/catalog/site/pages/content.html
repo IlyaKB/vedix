@@ -1,0 +1,25 @@
+<div id="pagedetail" class="page-detail">
+	{{#detail}}
+	{{^only_body}}
+	<div class="page-header">
+		{{#author}}<span>Разместил(а): <a href="#{{author_login}}">{{author_name}}</a></span> | {{/author}}
+		<span>Размещено: <span>{{docdate}}</span></span> | 
+		<span>Просмотров: <span data-bind="text: hitsPrint">{{hitsPrint}}</span></span>
+	</div>
+	{{/only_body}}
+	<div class="page-body">
+		{{{body}}}
+	</div>
+	{{^only_body}}
+	<div class="page-footer">
+		<div>
+			{{#srcinfo}}<span>Источник: <span>{{{.}}}</span></span> | {{/srcinfo}}
+			{{#upddate}}<span>Обновлено: <span class="upddate">{{.}}</span></span> | {{/upddate}}
+			{{#isallowvote}}{{>component:voting}} | {{/isallowvote}}
+			<span class="share">{{>gcommon:w_share}}</span>
+		</div>
+		{{#tags}}<div class="tags">Ключевые слова: {{#items}}<a href="#" onclick="alert('TODO'); return false;">{{.}}</a>{{/items}}</div>{{/tags}}
+	</div>
+	{{/only_body}}
+	{{/detail}}
+</div>

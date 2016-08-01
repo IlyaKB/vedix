@@ -24,8 +24,6 @@ define(["require", "exports", 'jquery', './../main', './_components/poll/poll'],
             this.poll_random = (elPollR.length ? new Poll('#poll_random', config) : null);
             $(document).ready(function () {
                 $('#admin_link').attr('href', '/admin');
-                $('#demo_off').attr('href', '?demo=0');
-                $('#demo_on').attr('href', '?demo=1');
                 $('#id_uagent').hide().click(function () {
                     $('#id_uagent').hide();
                     $('#id_uagent_but').show();

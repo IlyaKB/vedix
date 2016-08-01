@@ -1,11 +1,12 @@
 <?php
+namespace VediX;
 
 if (! defined('CACHE_DEFAULT_TTL')) define('CACHE_DEFAULT_TTL', 60);
 
 /**
  * Получить данные по namespace и ключу
  * @param string $namespace Используется при массовом удалении ключей одного типа
- * @param mixed $key Параметры ключа
+ * @param mixed $key Параметры ключа // TODO: сделать составным, т.е. задавать строкой "part1.part2.part3...."
  * @param mixed &$value Значение
  */
 function getCache($namespace, $key, &$value) {

@@ -1,0 +1,80 @@
+div.breadcrumbs {
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+div.breadcrumbs a {
+  font-size: 12pt;
+  font-weight: bold;
+  color: black;
+}
+div.mag-list div.box {
+  width: 263px;
+  height: 333px;
+  cursor: default;
+  margin: 10px;
+  background: #fff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #f6f6f5 #e4e4e3 #e4e4e3 #f6f6f5;
+  background-color: #fef1ec;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  border-radius: 20px;
+}
+div.mag-list div.box a {
+  color: black;
+}
+div.mag-list div.box:hover {
+  background-color: #ffe45c;
+}
+div.mag-list div.box:hover a {
+  color: red;
+}
+div.mag-list div.box:hover button {
+  color: red;
+}
+div.mag-list div.box:hover button:hover {
+  background-color: #fef1ec;
+}
+div.mag-list div.box div.name {
+  min-height: 45px;
+  text-align: center;
+}
+div.mag-list div.box div.name a {
+  font-weight: bold;
+}
+div.mag-list div.box div.photo {
+  text-align: center;
+  padding: 0px;
+  width: 238px;
+  height: 200px;
+}
+div.mag-list div.box div.photo img {
+  width: 238px;
+  height: 200px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: inset;
+  border-color: #e4e4e3 #f6f6f5 #f6f6f5 #e4e4e3;
+}
+div.mag-list div.box div.bottom-info > table {
+  width: 100%;
+  font-size: 10pt;
+  font-weight: bold;
+}
+div.mag-list div.box div.bottom-info > table td {
+  height: 27px;
+}
+div.mag-list div.box div.bottom-info > table td:nth-child(1) {
+  text-align: left;
+}
+div.mag-list div.box div.bottom-info > table td:nth-child(2) {
+  text-align: right;
+  color: darkred;
+}
+div.mag-list div.box div.bottom-info > table td:nth-child(2) span.price {
+  font-size: 14pt;
+}

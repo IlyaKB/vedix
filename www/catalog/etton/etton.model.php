@@ -1,4 +1,6 @@
 <?php
+namespace VediX;
+
 class EttonModel extends CatalogModel {
 	
 	public function __construct() {

@@ -1,10 +1,14 @@
 <?php
+namespace VediX;
 
 require_once( HD_CORE . 'page.model.php');
 require_once( HD_CORE . 'page.controller.php');
 
 /**
- * Class Page
+ * Page
+ * Класс для подготовки и отображения текущей страницы сайта. Запускает соответствующий контроллер страницы, подключает класс с данными страницы.
+ * @author IlyaKB <veddbrus@mail.ru>
+ * @version 1.0
  */
 class Page {
 	
@@ -20,12 +24,12 @@ class Page {
 		
 		if ( (Utils::_REQUEST('mustache')) || (! Request::AJAX()) ) { // Mustache не подключаем, когда используется AJAX (кроме случая с принудительным включением)
 			include_once('core/libs/mustache/src/Mustache/Autoloader.php');
-			Mustache_Autoloader::register();
-			$this->mustache = new Mustache_Engine(Array(
+			\Mustache_Autoloader::register();
+			$this->mustache = new \Mustache_Engine(Array(
 				'template_class_prefix' => 'mustache_',
 				'cache' => MUSTACHE_CACHE_DIR,
-				'loader' => new Mustache_Loader_FilesystemLoader(HD_ROOT, Array('extension' => '.html')),
-				'partials_loader' => new Mustache_Loader_FilesystemLoader(HD_ROOT, Array('extension' => '.html'))
+				'loader' => new \Mustache_Loader_FilesystemLoader(HD_ROOT, Array('extension' => '.html')),
+				'partials_loader' => new \Mustache_Loader_FilesystemLoader(HD_ROOT, Array('extension' => '.html'))
 				//'logger' => new Mustache_Logger_StreamLogger('php://stderr'),
 				//',cache_file_mode' => 0666,
 			));
@@ -102,15 +106,15 @@ class Page {
 		include_once($application_main_file);
 		
 		// Определяем класс для запуска run()
-		$classNameSkin = ucfirst($skin) . 'Controller';
-		$classNameApplication = ucfirst($application) . 'Controller';
+		$classNameSkin = 'VediX\\'.ucfirst($skin) . 'Controller';
+		$classNameApplication = 'VediX\\'.ucfirst($application) . 'Controller';
 		$className = $classNameSkin; // по умолчанию класс скина
 		
 		// Подключаем контроллер/модуль модуля (2-уровень)
 		$module_main_file = $module_dir . $module . '.php';
 		if ($this->checkFile($module_main_file)) {
 			include_once($module_main_file);
-			$className = ucfirst($module) . 'Controller';
+			$className = 'VediX\\'.ucfirst($module) . 'Controller';
 		}
 		
 		$this->checkClass($className, $module, 'контроллера модуля');
@@ -207,8 +211,8 @@ class Page {
 	 */
 	static public function addComponent($component, $param = Array(), $application = DEFAULT_APPLICATION, $skin = null, $flag = null) {
 		
-		$controllerClassName = ucfirst($component) . 'Controller';
-		$modelClassName = ucfirst($component) . 'Model';
+		$controllerClassName = 'VediX\\'.ucfirst($component) . 'Controller';
+		$modelClassName = 'VediX\\'.ucfirst($component) . 'Model';
 		
 		if (! $skin) {
 			$skin = ConfigCatalog::get('skin', $application, $component);
@@ -251,7 +255,7 @@ class Page {
 			}
 		}
 		
-		if (! class_exists($controllerClassName)) {
+		if (! class_exists( $controllerClassName)) {
 			RETURN Request::stop(
 				'Класс '.$controllerClassName.' не существует!'.Utils::rn.Utils::rn.
 				'Код компонента: '.$component.Utils::rn.
@@ -265,7 +269,7 @@ class Page {
 		$controller = new $controllerClassName($param);
 		
 		if (! class_exists($modelClassName)) {
-			$modelClassName = 'Model'; // На случай если в %component%.php нет класса модели
+			$modelClassName = 'VediX\\'.'Model'; // На случай если в %component%.php нет класса модели
 		}
 		
 		$controller->model = new $modelClassName();
@@ -354,7 +358,7 @@ class Page {
 		$file = HD_CATALOG . $webapp . '/' . $appmod . '/' . $appmod . '.controller.php';
 		if ( (file_exists($file)) && (is_file($file)) ) {
 			include_once($file);
-			$className = ucfirst($appmod) . 'Controller';
+			$className = 'VediX\\'.ucfirst($appmod) . 'Controller';
 			if (!class_exists($className)) {
 				return Request::stop('Не найден класс "'.$className.'"!', Request::HH_INTERNALERROR, 'Ошибка при подключении модуля!');
 			}

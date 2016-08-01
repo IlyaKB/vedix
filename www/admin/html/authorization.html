@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{config.main.sitename}} {{{config.main.title_sep}}} Авторизация</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta http-equiv="Content-Language" content="{{request.language}}"/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<script type="text/javascript" src="/core/libs/jquery-2.1.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/core/libs/bootstrap-3.1.1/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="/core/libs/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="//ulogin.ru/js/ulogin.js"></script>
+		<script type="text/javascript" src="/admin/js/utils.js"></script>
+		<script type="text/javascript" src="/admin/js/authorization.js"></script>
+		<link rel="stylesheet" type="text/css" href="/admin/css/authorization.css"/>
+	</head>
+	<body>
+		
+		<header><a href="/">Перейти на главную страницу</a> | {{{currentDate}}}</header>
+			
+		<div class="authorization-form">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<span class="col-sm-2"></span>
+					<div class="col-sm-10">
+						<h3>Вход в панель управления</h3>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
+					<div class="col-sm-10">
+						<input type="email" class="form-control" id="inputEmail" placeholder="E-mail">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword" class="col-sm-2 control-label">Пароль</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="inputPassword" placeholder="Пароль">
+					</div>
+				</div>
+				<div id="messages" class="form-group" style="display: none; margin-bottom: 0px;">
+					<div class="col-sm-offset-2 col-sm-10">
+						<p style="color: red"></p>
+					</div>
+				</div>
+				<div class="form-group" style="margin-bottom: 0px;">
+					<div class="col-sm-offset-2 col-sm-7">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" disabled="disabled"/> Запомнить меня
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-3" style="text-align: right">
+						<input type="button" value="Войти" class="btn btn-default" onclick="loginEmail();"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10" style="text-align: center">
+						или<br/>
+						<p style="margin-top: 10px;"></p>
+						<a href="#" id="{{config.main.ulogin_id}}" data-ulogin="{{config.main.ulogin_params}}" onclick="return false;"><img src="//ulogin.ru/img/button.png" width=187 height=30 alt="МультиВход"/></a>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="wrap">
+			<div class="clearfix"></div>
+		</div>
+		<footer>{{{config.main.copyright}}}</footer>
+		
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	{{>gcommon:head}}
+	<body>
+		<div class="main-layer">
+			<div class="header-layer">
+				{{>gcommon:header}}
+			</div><!-- .header-layer -->
+			{{>gcommon:notification}}
+			<div class="middle-layer">
+				<div class="content-layer">
+					<main class="content-main-layer">
+						
+						<div id="news_content" class="news-content">
+							
+							<h1>Новости</h1>
+							<div class="rss"><a href="/rss/news" target="_blank">RSS</a></div>
+							
+							{{#list}}
+							{{>news/pagination_top}}
+							{{>news/list}}
+							{{>news/pagination_bottom}}
+							{{/list}}
+
+							{{#detail}}
+							{{>news/record}}
+							{{/detail}}
+						</div>
+						
+						{{#detail}}
+						{{#isallowcomments}}
+						{{>gcomponent:comments}}
+						{{/isallowcomments}}
+						{{/detail}}
+					</main><!-- .content-main-layer -->
+				</div><!-- .content-layer -->
+				<div class="left-layer">
+					{{>common:left}}
+				</div><!-- .left-layer -->
+				<div class="right-layer">
+					{{>common:right}}
+				</div><!-- .right-layer -->
+			</div><!-- .middle-layer -->
+		</div><!-- .main-layer -->
+		
+		<div class="footer-layer">
+			{{>gcommon:footer}}
+		</div><!-- footer-layer -->
+		
+		{{>gcommon:resources_foot}}
+	</body>
+</html>

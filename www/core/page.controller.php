@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 /**
  * Base class for all other controller-class
@@ -72,10 +73,10 @@ class PageController extends Controller {
 		
 		$this->templateRender = '/' . $this->skin . '/' . $this->application . '/' . $this->module . '/' . $this->module;
 		
-		if (! $modelClassName) $modelClassName = ucfirst($this->module) . 'Model';
+		if (! $modelClassName) $modelClassName = 'VediX\\'.ucfirst($this->module) . 'Model';
 		#if (class_exists( $modelClassName )) $this->model = new $modelClassName(); // Модель лучше создавать явно в контроллерах, что бы IDE видела методы и поля класса
 		if (! class_exists( $modelClassName )) {
-			$modelClassName = ucfirst($this->application) . 'Model';
+			$modelClassName = 'VediX\\'.ucfirst($this->application) . 'Model';
 			if (class_exists( $modelClassName )) {
 				$this->model = new $modelClassName();
 			} else {

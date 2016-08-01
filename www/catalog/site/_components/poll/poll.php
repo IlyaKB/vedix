@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 class PollController extends Controller {
 	

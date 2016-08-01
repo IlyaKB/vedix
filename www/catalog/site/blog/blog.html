@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	{{>gcommon:head}}
+	<body>
+		<div class="main-layer">
+			<div class="header-layer">
+				{{>gcommon:header}}
+			</div><!-- .header-layer -->
+			{{>gcommon:notification}}
+			<div class="middle-layer">
+				<div class="content-layer">
+					<main class="content-main-layer">
+						
+						<div id="blog_posts" class="blog-content">
+							
+							{{#blog}}
+
+							<div class="breadcrumbs">
+								<a href="/blog">Блог</a>
+								{{#category}}
+								&gt;&gt; <a href="/blog/{{url_name}}">{{name}}</a>
+								{{/category}}
+							</div>
+							{{#list}}
+							<div class="rss"><a href="/rss/blog" target="_blank">RSS</a></div>
+							{{/list}}
+							<hr/>
+							
+							{{#list}}
+							{{>blog/pagination_top}}
+							{{>blog/list}}
+							{{>blog/pagination_bottom}}
+							{{/list}}
+
+							{{#detail}}
+							{{>blog/record}}
+							{{#isallowcomments}}
+							{{>gcomponent:comments}}
+							{{/isallowcomments}}
+							{{/detail}}
+							
+							{{/blog}}
+						</div>
+					</main><!-- .content-main-layer -->
+				</div><!-- .content-layer -->
+				<div class="left-layer">
+					<div class="block-title">Категории блога</div>
+					<div class="block-data">
+						{{>blog/categories}}
+					</div>
+				</div><!-- .left-layer -->
+				<div class="right-layer">
+					{{>common:right}}
+				</div><!-- .right-layer -->
+			</div><!-- .middle-layer -->
+		</div><!-- .main-layer -->
+		
+		<div class="footer-layer">
+			{{>gcommon:footer}}
+		</div><!-- footer-layer -->
+		
+		{{>gcommon:resources_foot}}
+	</body>
+</html>

@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'rub';
+	src: url(/catalog/site/_common/fonts/rub.eot);
+	src: url(/catalog/site/_common/fonts/rub.ttf);
+	src: url(/catalog/site/_common/fonts/rub.svg);
+	src: url(/catalog/site/_common/fonts/rub.woff);
+}
+.rouble {
+	font-family: rub;
+}
+
+.axis path,.axis line {
+	font: 10px sans-serif;
+	fill: none;
+	stroke: #aaa;
+	shape-rendering: crispEdges;
+}
+
+.bar {
+	opacity: 0.8
+}
+.bar:hover {
+	opacity: 1
+}
+
+.x.axis {
+	font: 12px sans-serif;
+}
+
+.y.axis {
+	font: 12px sans-serif;
+}
+.y.axis line {
+	stroke: #ccc;
+	stroke-dasharray: 2,2;
+}
+
+div.tooltip {
+	position: absolute; 
+	text-align: center;
+	width: 130px;
+	height: 30px;
+	padding: 2px;
+	font: 11px sans-serif;
+	background: #ffa;
+	border: 1px #bbb outset;
+	border-radius: 4px;
+	pointer-events: none;
+}
+
+div.tooltip span {
+	color: #f44;
+}
+
+.rectLabel {
+	font: 8pt Arial;
+}
+
+svg text.axis-y-label {
+	font-size: 10pt;
+}
+svg text.rouble {
+	font-size: 12pt;
+}

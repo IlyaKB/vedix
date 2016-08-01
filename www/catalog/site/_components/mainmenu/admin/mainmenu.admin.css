@@ -1,0 +1,79 @@
+div.mainmenu-cnt {
+  overflow: auto;
+  padding: 10px;
+}
+div.mainmenu-cnt p {
+  font: bold 12pt Arial;
+  margin-bottom: 0px;
+}
+div.mainmenu-cnt ul {
+  list-style: none;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+div.mainmenu-cnt input.name {
+  width: 300px;
+}
+div.mainmenu-cnt input {
+  padding: 2px;
+}
+div.mainmenu-cnt input.button-save:disabled {
+  color: #ccc;
+}
+div.mainmenu-tree ul.items {
+  clear: both;
+  float: none;
+  margin-left: 30px;
+}
+div.mainmenu-tree ul.items li {
+  margin: 0px;
+}
+div.mainmenu-tree ul.items li p {
+  margin: 0px;
+  padding: 3px;
+}
+div.mainmenu-tree ul.items li p span {
+  font: normal 12pt Arial;
+}
+div.mainmenu-tree ul.items li p:hover {
+  background-color: #eee;
+}
+div.pages-list-modal {
+  margin-top: 50px;
+}
+div.pages-list-modal .modal-body {
+  padding-left: 30px;
+  overflow: auto;
+  max-height: 300px;
+}
+div.pages-list-modal .modal-body ul.pages-list {
+  list-style: none;
+}
+div.pages-list-modal .modal-body ul.pages-list > li {
+  padding: 2px;
+}
+div.pages-list-modal .modal-body ul.pages-list > li span:nth-of-type(1) {
+  font-weight: bold;
+}
+div.pages-list-modal .modal-body ul.pages-list > li span:nth-of-type(2) {
+  font-weight: normal;
+}
+div.pages-list-modal .modal-body ul.pages-list > li > label {
+  cursor: pointer;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+div.pages-list-modal .modal-body ul.pages-list > li > label input {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: -2px;
+  *overflow: hidden;
+}
+div.pages-list-modal .modal-body ul.pages-list > li:hover {
+  cursor: pointer;
+  background-color: #eee;
+}

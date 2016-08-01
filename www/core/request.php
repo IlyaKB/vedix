@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 /**
  * Request parser
@@ -291,7 +292,7 @@ class Request {
 		$http_referer = Utils::_SERVER('HTTP_REFERER');
 		if (strpos(strtolower($http_referer), ConfigSite::$sitedname) === false) $http_referer = null;
 
-		ob_start('stop_replace');
+		ob_start('VediX\stop_replace');
 		?><html>
 			<head>
 				<title>Система управления сайтом <?php echo ($title ? ' - ' . $title : ''); ?></title>

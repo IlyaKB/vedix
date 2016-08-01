@@ -1,0 +1,33 @@
+div.vdx-pagination-static {
+  display: none;
+}
+div.vdx-pagination {
+  text-align: right;
+  margin: 0px 10px;
+  font-size: 9pt;
+}
+div.vdx-pagination span.previous-next span {
+  color: #aaa;
+  cursor: default;
+}
+div.vdx-pagination span.numbers span {
+  color: black;
+  font-weight: bold;
+  border: 2px outset #aaa;
+  background-color: #fbd850;
+  padding: 2px 5px;
+  cursor: default;
+  border-radius: 5px;
+}
+div.vdx-pagination span.numbers a {
+  font-weight: bold;
+  border: 1px outset #aaa;
+  background-color: #f6f6f5;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+div.vdx-pagination span.numbers a:hover {
+  color: red;
+  background-color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,51 @@
+<!-- DYNAMIC CONTENT -->
+<div id="news_list" class="news-list" data-bind="foreach: news, visible: true" style="display: none;">
+	<section class="news-item">
+		<hr/>
+		<h2>
+			<img align="middle" vspace="5" hspace="5" src="/data/site/news/news_rec.jpg">
+			<a href="#" data-bind="text: caption, attr: { href: '/news/'+url_name }">Название новости</a>
+		</h2>
+		<div class="top-info">
+			<span class="docdate" data-bind="text: docdate">00.00.0000</span> 
+			<span class="index" data-bind="text: '#'+index">#00</span>
+		</div>
+		<div class="announce" data-bind="html: announce">Текст анонса</div>
+		<div class="bottom-info">
+			<span data-bind="visible: authorName">Разместил(а): <a href="#" data-bind="text: authorName, attr: { href: '/user/'+authorId }">ФИО</a> | </span>
+			<span data-bind="visible: srcinfo">Источник: <span data-bind="html: srcinfo">Источник не указан</span> | </span>
+			<span>Просмотров:
+				<span data-bind="visible: hits < 10 && ahits < 10">менее 10</span>
+				<span data-bind="visible: hits >= 10 || ahits >= 10"><span data-bind="text: hits">0</span>/<span data-bind="text: ahits">0</span></span>
+				| </span>
+			<span data-bind="visible: vote">Рейтинг: <span data-bind="text: vote">0</span> | </span>
+			<a href="#" data-bind="visible: commentsCount, attr: { href: '/news/'+url_name + '#comments' }">Комментариев: <span data-bind="text: commentsCount">10</span></a>
+			<span data-bind="visible: ! commentsCount">Комментариев: нет</span>
+		</div>
+	</section>
+</div>
+<!-- /DYNAMIC CONTENT -->
+
+<!-- STATIC SOURCE -->
+<div id="news_list_static" data-bind="sourcedata: news, visible: false" data-sd-type="observableArray">
+	{{#items}}
+	<section data-sd-type="object">
+		<hr/>
+		<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+		<input type="hidden" data-sd-field="authorId" data-sd-type="number" value="{{author_id}}"/>
+		<input type="hidden" data-sd-field="index" data-sd-type="number" value="{{index}}"/>
+		<input type="hidden" data-sd-field="url_name" value="{{url_name}}"/>
+		<h2 data-sd-field="caption">{{caption}}</h2>
+		<div>
+			<span data-sd-field="docdate">{{{docdate}}}</span> |
+			<span data-sd-field="authorName">{{author_name}}</span> |
+			<span data-sd-field="srcinfo">{{{srcinfo}}}</span> |
+			<span data-sd-field="vote" data-sd-type="number">{{vote}}</span> |
+			<span data-sd-field="hits" data-sd-type="number">{{hits}}</span>/<span data-sd-field="ahits" data-sd-type="number">{{ahits}}</span> |
+			<span data-sd-field="commentsCount" data-sd-type="number">{{comments_count}}</span>
+		</div>
+		<div data-sd-field="announce">{{{announce}}}</div>
+	</section>
+	{{/items}}
+</div>
+<!-- /STATIC SOURCE -->

@@ -1,8 +1,10 @@
 <?php
+namespace VediX;
+
 /**
  * IndexController
  */
-class IndexController extends EttonController {
+final class IndexController extends EttonController {
 	
 	const TTL = 1;
 	const CELL_COUNT = 12;

@@ -1,0 +1,48 @@
+div.mag-sorting {
+  padding: 0px 10px;
+  font-size: 10pt;
+}
+div.mag-sorting > span {
+  color: #000;
+  cursor: pointer;
+}
+div.mag-sorting > span > span {
+  color: #08c;
+}
+div.mag-sorting > span > span.name {
+  border-bottom: 1px dotted #08c;
+}
+div.mag-sorting-popup {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 100px;
+  z-index: 1000;
+  background-color: #fefbfc;
+  padding: 5px;
+  text-align: left;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #eee #aaa #aaa #eee;
+}
+div.mag-sorting-popup div {
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border-top: 1px solid gray;
+}
+div.mag-sorting-popup div:hover {
+  color: red;
+  background-color: #fdf5ce;
+}
+div.mag-sorting-popup div:first-child {
+  border-top-width: 0px;
+}
+div.mag-sorting-popup div.active {
+  background-color: #fef9df;
+}
+div.mag-sorting-popup div span.fa {
+  cursor: help;
+}

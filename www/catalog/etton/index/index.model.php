@@ -1,8 +1,10 @@
 <?php
+namespace VediX;
+
 /**
- * ettonModel
+ * EttonModel
  */
-class IndexModel extends EttonModel {
+final class IndexModel extends EttonModel {
 	
 	public $resources_module = Array(
 		Array('css' => 1, 'head' => 1, 'href' => '/core/libs/jquery-ui-1.10.4/jquery-ui-1.10.4.custom.css'),

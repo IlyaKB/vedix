@@ -1,0 +1,28 @@
+/*table.tree-grid {
+	> thead {
+		> tr {
+			> th {
+				border-width: 1px;
+				border-style: solid;
+				border: #fff #aaa #aaa #fff;
+				padding: 2px;
+			}
+		}
+	}
+	> tbody {
+		> tr > td > table.caption > thead > tr {
+			> th.tree-line-3 {
+				background-image: url(/admin/img/ft3.gif);
+			}
+			> th.tree-line-2 {
+				background-image: url(/admin/img/ft2.gif);
+			}
+			> th.tree-line-1 {
+				background-image: url(/admin/img/ft1.gif);
+			}
+			> th.caption {
+				padding-left: 3px;
+			}
+		}
+	}
+}*/

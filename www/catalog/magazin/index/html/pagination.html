@@ -1,0 +1,16 @@
+{{#pagination}}
+<div class="mag-pagination">
+	<span class="previous-next">
+		{{#previous_page}}<a href="{{.}}">← предыдущая</a>{{/previous_page}}
+		{{^previous_page}}<span>← предыдущая</span>{{/previous_page}} |
+		{{#next_page}}<a href="?p={{next_page}}">следующая →</a>{{/next_page}}
+		{{^next_page}}<span>следующая →</span>{{/next_page}}
+	</span>
+	<span class="numbers">
+		{{#items}}
+		{{#selected}}<span>{{text}}</span>{{/selected}}
+		{{^selected}}<a href="{{href}}">{{text}}</a>{{/selected}}
+		{{/items}}
+	</span>
+</div>
+{{/pagination}}

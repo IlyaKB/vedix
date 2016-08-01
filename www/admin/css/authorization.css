@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body,
+div.wrap {
+  height: 100%;
+}
+div.wrap {
+  height: auto;
+  min-height: 100%;
+}
+div.wrap {
+  padding-bottom: 30px;
+}
+footer {
+  position: relative;
+  width: 100%;
+  margin-top: -30px;
+  height: 30px;
+  clear: both;
+  text-align: center;
+  font-size: 10pt;
+  color: #aaa;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+header {
+  position: fixed;
+  width: 100%;
+  padding: 5px;
+  text-align: right;
+  color: #CECACE;
+  font-size: 10pt;
+}
+div.authorization-form {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: 48%;
+  top: 50%;
+  margin: -100px 0 0 -200px;
+}
+div.authorization-form h3 {
+  margin: 0px;
+  font-size: 20px;
+}
+div.authorization-form label.control-label {
+  white-space: nowrap;
+}

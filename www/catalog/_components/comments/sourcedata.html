@@ -1,0 +1,43 @@
+{{#comments}}
+<div id="comments_list_static" data-bind="sourcedata: comments.items, sourcedataOnComplete: comments.itemsCallback" data-sd-type="observableArray">
+	{{#items}}
+	<div data-sd-type="object">
+		<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+		<input type="hidden" data-sd-field="author_id" data-sd-type="number" value="{{author_id}}"/>
+		<input type="hidden" data-sd-field="photo" data-sd-type="string" value="{{photo}}"/>
+		<input type="hidden" data-sd-field="replies_visible" data-sd-type="observable<boolean>" value="false"/>
+		<div>
+			<span data-sd-field="author_name" data-sd-type="string">{{author_name}}</span> | 
+			<span data-sd-field="creation_date" data-sd-type="observable<string>">{{creation_date}}</span> |
+			<span data-sd-field="index" data-sd-type="observable<number>">{{index}}</span>
+		</div>
+		<div data-sd-field="text">{{text}}</div>
+		<div>
+			<span data-sd-field="counter_dislike" data-sd-type="observable<number>">{{counter_dislike}}</span> | 
+			<span data-sd-field="counter_like" data-sd-type="observable<number>">{{counter_like}}</span>
+		</div>
+
+		<div data-sd-field="replies" data-sd-type="observableArray">
+			{{#replies}}
+			<div data-sd-type="object">
+				<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+				<input type="hidden" data-sd-field="author_id" data-sd-type="number" value="{{author_id}}"/>
+				<input type="hidden" data-sd-field="photo" data-sd-type="string" value="{{photo}}"/>
+				<div>
+					<span data-sd-field="author_name" data-sd-type="string">{{author_name}}</span> | 
+					<span data-sd-field="creation_date" data-sd-type="observable<string>">{{creation_date}}</span> |
+					<span data-sd-field="index" data-sd-type="observable<number>">{{index}}</span>
+				</div>
+				<div data-sd-field="text">{{text}}</div>
+				<div>
+					<span data-sd-field="counter_dislike" data-sd-type="observable<number>">{{counter_dislike}}</span> | 
+					<span data-sd-field="counter_like" data-sd-type="observable<number>">{{counter_like}}</span>
+				</div>
+			</div>
+			{{/replies}}
+		</div>
+
+	</div>
+	{{/items}}
+</div>
+{{/comments}}

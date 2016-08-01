@@ -1,0 +1,21 @@
+<figure id="msp_complex" class="multiselectpicker" style="overflow: hidden;">
+	<figcaption>Multi Select Picker:</figcaption>
+
+	<div style="overflow: hidden;">&nbsp;<span data-bind="text: value"></span></div> <!-- TODO: DEL -->
+
+	<div>
+		<input id="msp_complex_filter" type="text" placeholder="Найти" data-bind="value: searchValue, valueUpdate: 'afterkeydown'"/>
+	</div>
+	<div>
+		<ul id="msp_complex_list">
+			<!-- ko foreach: options -->
+			<li data-bind="attr: { 'data-url-name': url_name }, click: $parent.optionClick">
+				<input type="checkbox"/>
+				<span data-bind="text: name"></span>
+			</li>
+			<!-- /ko -->
+		</ul>
+	</div>
+
+	<div><input type="button" value="Clear" data-bind="click: clearSelect"/></div><!-- TODO: DEL -->
+</figure>

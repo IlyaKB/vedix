@@ -1,0 +1,5 @@
+<div id="config_cnt" class="config-cnt">
+	<h3>Редактирование конфигурационного файла настроек сайта:</h3>
+	<textarea id="ini_file_body" style="width: 100%; height: 500px" data-bind="value: configBody, valueUpdate: 'keyup'"></textarea>
+	<input type="button" value="Загрузить" data-bind="click: load, disable: saved()"/> <input type="button" value="Сохранить" data-bind="disable: saved, click: save"/>
+</div>

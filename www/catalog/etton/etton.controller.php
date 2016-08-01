@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 /**
  * Главный контроллер веб-приложения "Etton" (etton)

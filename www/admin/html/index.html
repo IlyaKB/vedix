@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{config.main.sitename}}</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta http-equiv="Content-Language" content="{{request.language}}"/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		
+		<script type="text/javascript" src="/core/libs/jquery-2.1.1.min.js"></script>
+		
+		<script type="text/javascript" src="/core/libs/jquery-ui-1.11.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/core/libs/jquery-ui-1.11.1/jquery-ui.min.css"/>
+		
+		<script type="text/javascript" src="/core/libs/knockout-3.1.0.min.js"></script>
+		
+		<script type="text/javascript" src="/core/libs/underscore-min.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="/core/libs/bootstrap-3.1.1/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="/core/libs/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="/core/libs/jqwidgets-3.3.0/jqwidgets/styles/jqx.base.css" type="text/css"/>
+		<link rel="stylesheet" href="/core/libs/jqwidgets-3.3.0/jqwidgets/styles/jqx.web.css" type="text/css" />
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxcore.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxknockout.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxwindow.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxdockpanel.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxsplitter.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxscrollbar.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxbuttons.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxlistbox.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxcheckbox.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxtabs.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxmenu.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxdata.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.pager.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.selection.js"></script> 
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.columnsresize.js"></script> 
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.sort.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxgrid.filter.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxnumberinput.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxdropdownlist.js"></script>
+		<script type="text/javascript" src="/core/libs/jqwidgets-3.3.0/jqwidgets/jqxbuttongroup.js"></script>
+		
+		<script type="text/javascript" src="/admin/js/utils.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="/admin/css/admin.css"/>
+		<script type="text/javascript" src="/admin/js/admin.js"></script>
+		<script type="text/javascript" src="/admin/js/grid.js"></script>
+		
+		{{#sectionCSSFiles}}<link rel="stylesheet" type="text/css" href="{{.}}"/>{{/sectionCSSFiles}}
+		{{#sectionJSFiles}}<script type="text/javascript" src="{{.}}"></script>{{/sectionJSFiles}}
+	</head>
+	<body>
+		
+		<div class="wrapper">
+			
+			{{>/admin/html/header}}
+			
+			<main class="content tab-content" id="forms">
+				<!-- ko foreach: sections -->
+				<div class="tab-pane fade" data-bind="attr: { id: formHtml.attrId }, css: formHtml.cssClass, template: { name: 'template_' + code }"></div>
+				<!-- /ko -->
+			</main><!-- .content -->
+			
+		</div><!-- .wrapper -->
+
+		<footer class="footer">
+			<div id="jqxMenuTabs" style="visibility: hidden; float: left;"></div>
+			<ul id="tabs" class="footer-tabs nav nav-tabs box menu-1" data-bind="foreach: sections" style="display: none">
+				<li id="tab_loading" data-bind="attr: { id: tabHtml.attrId, 'data-section': code }">
+					<a href="#form_loading" data-toggle="tab" data-bind="attr: { href: tabHtml.href }, text: title">Loading...</a>
+				</li>
+			</ul>
+			<div class="footer-status-bar">
+				<ul>
+					<li>Пользователь:</li>
+					<li>{{user.login}}&nbsp;</li>
+					<li>Статус:</li>
+					<li data-bind="text: statusText, css: { wait: status() == 0, work: status() > 0, error: status() < 0 }">Ожидание команд</li>
+				</ul>
+				<span></span>
+			</div>
+		</footer><!-- .footer -->
+		
+		
+		<!-- Modal -->
+		<div class="modal fade bs-example-modal-sm" id="modal_loading" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-sm" style="margin-top: 200px">
+				<div class="modal-content" data-bind="text: statusText" style="padding: 30px;">
+				Загрузка данных
+				</div>
+			 </div>
+		</div>
+		<!-- /Modal -->
+		
+		<div id="jqxGridMenu" class="grid-context-menu"></div>
+		
+		<style>
+			#grid_toolbar button {
+				background-color: #f1f2f3;
+				padding: 1px 3px 1px 3px;
+				border-width: 1px;
+			}
+		</style>
+		<div id="grid_toolbar" style="padding: 1px; padding-left: 1px; display: none">
+			<button id="grid_toolbar_add" title="Добавить"><img src="/admin/img/add.png"/></button><button id="grid_toolbar_edit" title="Изменить"><img src="/admin/img/edit.png"/></button><button id="grid_toolbar_delete" title="Удалить"><img src="/admin/img/delete.png"/></button>&nbsp;<button id="grid_toolbar_refresh" title="Обновить"><img src="/admin/img/refresh.png"/></button>
+			{{!<input id="searchField" type="text" style="height: 25px; width: 200px; margin-top: 3px; margin-left: 0px; padding-left: 3px;" placeholder="Найти"/>}}
+		</div>
+		
+		<script>
+			var config = {
+				section: {{{section}}}
+			};
+			
+			var admin = null;
+			$(document).ready( function() {
+				admin = new Admin(config);
+			});
+		</script>
+		
+	</body>
+</html>

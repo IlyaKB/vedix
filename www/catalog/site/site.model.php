@@ -1,4 +1,6 @@
 <?php
+namespace VediX;
+
 class SiteModel extends CatalogModel {
 	
 	public function __construct() {

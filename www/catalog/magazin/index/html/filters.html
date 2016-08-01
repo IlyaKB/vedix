@@ -1,0 +1,63 @@
+<div class="mag-filters" style="margin-left: 2px; margin-bottom: 0px;" data-bind="with: list.filters">
+	<table width="100%">
+		<tbody>
+			<tr>
+				<td>Ключевые слова:</td>
+				<td colspan="3">
+					<input type="text" style="width: 330px; border-radius: 10px; background-color: #fefefa; padding: 0px 5px;"/>
+				</td>
+				<td><button>Поиск</button></td>
+				<td><a id="mag_filters_popup_caller" href="#filters" data-bind="click: show">Дополнительные параметры фильтрации...</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="tags" data-bind="visible: tags().length" style="display: none">
+		<span class="clear" data-bind="click: $root.list.filters.clear">
+			<span class="name">Очистить всё</span>
+		</span>
+		<!-- ko foreach: tags -->
+		<span style="display: none" data-bind="visible: true">
+			<span class="name" data-bind="html: text"></span>
+			<span class="close" data-bind="click: $root.list.filters.removeTag">×</span>
+		</span>
+		<!-- /ko -->
+	</div>
+</div>
+
+<div id="mag_filters_popup" class="mag-filters-popup" style="display: none;" data-bind="with: list.filters._filters">
+	<div id="mag_filters_popup_draggable" class="header">Фильтрация списка товаров и услуг</div>
+	<div class="close" data-bind="click: $root.list.filters.close">×</div>
+	<hr style="margin: 0px 0px 5px; border-width: 2px; border-color: #aaa"/>
+	<div class="price" style="text-align: left; margin-top: 5px">
+		<span>Цена: <span data-bind="html: $root.list.filters.priceText">до 1&thinsp;000</span> <span class="fa fa-rub"></span></span><br/>
+		<div class="slider-wrapper">
+			<div id="slider_range" class="slider-range"></div>
+		</div>
+	</div>
+	<div data-bind="with: manufacturer" style="margin-bottom: 10px">
+		Изготовитель (автор):
+		<select style="width: 175px; border-radius: 5px" data-bind="options: items, value: value, optionsText: 'name', optionsValue: 'url_name'"></select>
+	</div>
+	<table width="100%" style="font: 10pt; font-weight: lighter;">
+		<tbody>
+			<tr valign="top">
+				<td>
+					<label data-bind="with: pre_order"><input type="checkbox" class="cb" data-bind="checked: value"/> Отобразить с предзаказом</label><br/>
+					<label data-bind="with: with_comments"><input type="checkbox" class="cb" data-bind="checked: value"/> С отзывами</label><br/>
+				</td>
+				<td>
+					<label data-bind="with: with_photo"><input type="checkbox" class="cb" data-bind="checked: value"/> С фото</label><br/>
+					<label data-bind="with: with_specification"><input type="checkbox" class="cb" data-bind="checked: value"/> С составом (рецептом)</label><br/>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+		<label data-bind="with: not_available"><input type="checkbox" class="cb" data-bind="checked: value"/> Отобразить отсутствующие в данный момент</label>
+	</div>
+	
+	<div style="text-align: right; margin-top: 10px">
+		<button data-bind="click: $root.list.filters.clear">Очистить</button>
+		<button data-bind="click: $root.list.filters.apply">Применить</button>
+	</div>
+</div>

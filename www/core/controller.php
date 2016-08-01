@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 abstract class Controller {
 	

@@ -1,6 +1,7 @@
 <?php
+namespace VediX;
 
-class IndexController extends SiteController {
+final class IndexController extends SiteController {
 	
 	public function __construct( $params = Array() ) {
 		

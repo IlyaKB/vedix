@@ -1,11 +1,12 @@
 <?php
+namespace VediX;
 
 include_once(HD_ETTON . 'positions\positions.model.php'); // use some methods
 
 /**
  * OrdersController
  */
-class OrdersController extends EttonController {
+final class OrdersController extends EttonController {
 	
 	const TTL = 60; // TODO: 60 // Кешируем на 60 сек.
 	
@@ -150,7 +151,7 @@ class OrdersController extends EttonController {
 	}
 	
 	private function clearListCache() {
-		// TODO: сделать на уровне ядра удаление кеша только по первой части ключа: clearCache('etton_orders_list'.User::id());
+		// TODO: сделать на уровне ядра удаление кеша до заданного уровня составного ключа: clearCache($namespace, 'part1', 'part2', 'part3', ...); или clearCache($namespace, 'part1.part2.part3....');
 		clearCache('etton_orders_list'.User::id(), 'default');
 		clearCache('etton_orders_list'.User::id(), 'createdate-asc');
 		clearCache('etton_orders_list'.User::id(), 'createdate-desc');

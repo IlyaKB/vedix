@@ -1,0 +1,153 @@
+#comments_list_static {
+  display: none;
+}
+div.vdx-comments form.main-form {
+  border-style: outset;
+  border-width: 1px;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #faf9f8;
+}
+div.vdx-comments form.main-form input,
+div.vdx-comments form.main-form textarea {
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 2px;
+}
+div.vdx-comments form.main-form div {
+  margin-bottom: 5px;
+}
+div.vdx-comments form.main-form textarea {
+  width: 100%;
+  height: 100px;
+}
+div.vdx-comments form.main-form input.fullname {
+  width: 307px;
+}
+div.vdx-comments form.main-form input.email {
+  width: 307px;
+}
+div.vdx-comments form.main-form div.controls {
+  text-align: right;
+}
+div.vdx-comments form.main-form div.controls span.errors {
+  float: left;
+  color: red;
+}
+div.vdx-comments div.comments-title {
+  text-align: center;
+  font-width: 12pt;
+  font-weight: bold;
+  margin: 10px;
+}
+div.vdx-comments div.vdx-comment {
+  border-style: outset;
+  border-width: 1px;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #f7f6f5;
+}
+div.vdx-comments div.vdx-comment div.comment-header {
+  font-size: 8pt;
+}
+div.vdx-comments div.vdx-comment div.comment-header span:last-of-type {
+  float: right;
+}
+div.vdx-comments div.vdx-comment div.comment-table-row {
+  display: table-row;
+}
+div.vdx-comments div.vdx-comment div.comment-table-row div.comment-photo {
+  display: table-cell;
+}
+div.vdx-comments div.vdx-comment div.comment-table-row div.comment-photo img {
+  width: 50px;
+}
+div.vdx-comments div.vdx-comment div.comment-table-row div.comment-body {
+  padding-left: 10px;
+  display: table-cell;
+  vertical-align: top;
+  text-align: justify;
+  font-size: 12pt;
+  font-weight: normal;
+  margin: 5px;
+}
+div.vdx-comments div.vdx-comment div.comment-footer {
+  font-size: 10pt;
+  text-align: right;
+}
+div.vdx-comments div.vdx-comment div.comment-footer span.voting {
+  cursor: pointer;
+  color: #aaa;
+}
+div.vdx-comments div.vdx-comment div.comment-footer span.voting img {
+  vertical-align: text-bottom;
+}
+div.vdx-comments div.vdx-comment div.comment-footer span.voting.dislike.hover {
+  color: red;
+}
+div.vdx-comments div.vdx-comment div.comment-footer span.voting.like.hover {
+  color: green;
+}
+div.vdx-comments div.vdx-comment div.replies-title {
+  text-align: center;
+  font-size: 10pt;
+  margin-bottom: 5px;
+}
+div.vdx-comments div.vdx-comment div.comment-reply {
+  background-color: #fafabb;
+  border-style: outset;
+  border-width: 1px;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  border-radius: 7px;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-left: 60px;
+}
+div.vdx-comments div.vdx-comment div.comment-reply:last-of-type {
+  margin-bottom: 0px;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-header {
+  font-size: 8pt;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-header span:last-of-type {
+  float: right;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-table-row {
+  display: table-row;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-table-row div.reply-photo {
+  display: table-cell;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-table-row div.reply-body {
+  padding-left: 10px;
+  display: table-cell;
+  vertical-align: top;
+  text-align: justify;
+  font-size: 12pt;
+  font-weight: normal;
+  margin: 5px;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-footer {
+  font-size: 10pt;
+  text-align: right;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-footer span.voting {
+  cursor: pointer;
+  color: #aaa;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-footer span.voting img {
+  vertical-align: text-bottom;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-footer span.voting.dislike.hover {
+  color: red;
+}
+div.vdx-comments div.vdx-comment div.comment-reply div.reply-footer span.voting.like.hover {
+  color: green;
+}

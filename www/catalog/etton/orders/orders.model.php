@@ -1,8 +1,10 @@
 <?php
+namespace VediX;
+
 /**
  * OrdersModel
  */
-class OrdersModel extends EttonModel {
+final class OrdersModel extends EttonModel {
 	
 	public $resources_module = Array(
 		Array('css' => 1, 'head' => 1, 'href' => '/core/libs/jquery-ui-1.10.4/jquery-ui-1.10.4.custom.css'),
@@ -215,7 +217,7 @@ class OrdersModel extends EttonModel {
 	
 	/**
 	 * Удалить заказ со спецификацией
-	 * @param int $id
+	 * @param int $id ИД заказа
 	 * @return object
 	 */
 	public function deleteOrder($id) {

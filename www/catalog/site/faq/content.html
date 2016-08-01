@@ -1,0 +1,79 @@
+<div id="faqcontent" class="faq-content">
+	
+	<h1>Вопросы и ответы</h1>
+	
+	<!-- DYNAMIC CONTENT -->
+	<div id="categories" data-bind="foreach: categories, visible: true" style="display: none">
+		<section class="category">
+			<hr/>
+			<h2 data-bind="click: $parent.categoryClick">
+				<span data-bind="html: $root.currentCategory() == id ? '&#9660;' : '&#9658;'"></span>
+				<span data-bind="text: name"></span>
+			</h2>
+			<div class="js-questions" data-bind="visible: $root.currentCategory() == id">
+				<ul data-bind="foreach: questions">
+					<li data-object="item">
+						<div class="question-reply">
+							<div class="question" data-bind="html: question"></div>
+							<div class="reply" data-bind="html: reply"></div>
+						</div>
+						<div class="like-dislike">
+							<span data-bind="text: counter_dislike, click: $root.questionDislike">0</span> | 
+							<span data-bind="text: counter_like, click: $root.questionLike">0</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+	<!-- /DYNAMIC CONTENT -->
+	
+	<!-- STATIC SOURCE -->
+	<div data-bind="sourcedata: categories" data-sd-type="observableArray" style="display: none">
+		{{#categories}}
+		<section data-sd-type="object">
+			<hr/>
+			<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+			<input type="hidden" data-sd-field="code" value="{{code}}"/>
+			<h2>
+				<span>&#9658;</span>
+				<span data-sd-field="name">{{name}}</span>
+			</h2>
+			<div>
+				<ul data-sd-field="questions" data-sd-type="observableArray">
+					{{#questions}}
+					<li data-sd-type="object">
+						<input type="hidden" data-sd-field="id" data-sd-type="number" value="{{id}}"/>
+						<div>
+							<div data-sd-field="question">{{question}}</div>
+							<div data-sd-field="reply">{{reply}}</div>
+						</div>
+						<div>
+							<span data-sd-field="counter_dislike" data-sd-type="observable<number>">{{counter_dislike}}</span> | 
+							<span data-sd-field="counter_like" data-sd-type="observable<number>">{{counter_like}}</span>
+						</div>
+					</li>
+					{{/questions}}
+				</ul>
+			</div>
+		</section>
+		{{/categories}}
+	</div>
+	<!-- /STATIC SOURCE -->
+	
+	<hr/>
+	
+	<h1 class="ask-question-title">Задайте свой вопрос:</h1>
+	
+	<form id="question_form" class="ask-question-form" data-bind="with: question">
+		<div>
+			<select data-bind="options: $root.categories, optionsText: 'name', value: category, optionsCaption: 'Выберите категорию...'"></select>
+		</div>
+		<div>
+			<textarea data-bind="value: text" style="width: 100%; height: 100px;"></textarea>
+		</div>
+		<div class="controls">
+			<button type="submit" onclick="return false;" data-bind="click: onSubmit">Отправить</button>
+		</div>
+	</form>
+</div>

@@ -1,10 +1,5 @@
 <?php
-
-/*
- * Description: Функционал для работы с БД (класс DB)
- * Authors: dbRus Group
- * Create date: 2009-2010 (db3), 2012 (db4), 2013 (db5)
- */
+namespace VediX;
 
 //if (get_magic_quotes_gpc()) stopWork(500, 'Активированы get_magic_quotes_gpc!');
 
@@ -18,7 +13,10 @@ class TSQLParams {
 }
 
 /**
- * Класс для работы с данными в БД
+ * DB
+ * Класс для работы с базой данных (2009-2010 (db3), 2012 (db4), 2013 (db5))
+ * @author IlyaKB <veddbrus@mail.ru>
+ * @version 1.0
  */
 class DB {
 	

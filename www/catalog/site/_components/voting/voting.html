@@ -1,0 +1,7 @@
+<span data-bind="with: voting">
+	<span>Проголосовало <span data-bind="text: $data.votesCountPrint()">...</span>: </span>
+	<!-- ko foreach: $data.votes --><img src="/data/empty.png" alt="vote" data-bind="
+		attr: { src: '/data/site/voting/vote' + ($parent.hoverVote() >= $index() ? '2' : mark) + '.png'},
+		click: $parent.clickVote,
+		event: { mouseover: $parent.imgMouseOver, mouseout: $parent.imgMouseOut }"/><!-- /ko -->
+</span>

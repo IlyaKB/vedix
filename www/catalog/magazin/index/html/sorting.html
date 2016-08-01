@@ -1,0 +1,24 @@
+<!-- ko with: list.sorting -->
+<div id="mag_sorting" class="mag-sorting" style="margin-left: 5px;">
+	<span id="mag_sorting_caller" data-bind="click: show">
+		сортировать:
+		<span class="name" data-bind="text: fieldName">не задана</span>
+		<span class="fa fa-sort-amount-asc" data-bind="css: { 'fa-sort-amount-asc': ! dir() || dir() == 'asc', 'fa-sort-amount-desc': dir() == 'desc' }, visible: field()" style="display: none"></span>
+	</span>
+</div>
+
+<div id="mag_sorting_popup" class="mag-sorting-popup" style="display: none">
+	<div data-bind="click: apply, css: { active: field() == 'dateplacement'}" data-sort-field="dateplacement">По дате публикации
+		<span class="fa fa-sort-amount-asc" data-bind="visible: (field() == 'dateplacement') && (! dir() || dir() == 'asc')" title="Сначала давние"></span>
+		<span class="fa fa-sort-amount-desc"  data-bind="visible: (field() == 'dateplacement') && (dir() == 'desc')" title="Сначала новые"></span>
+	</div>
+	<div data-bind="click: apply, css: { active: field() == 'price'}" data-sort-field="price">По цене
+		<span class="fa fa-sort-amount-asc" data-bind="visible: (field() == 'price') && (! dir() || dir() == 'asc')" title="Сначала дешёвые"></span>
+		<span class="fa fa-sort-amount-desc"  data-bind="visible: (field() == 'price') && (dir() == 'desc')" title="Сначала дорогие"></span>
+	</div>
+	<div data-bind="click: apply, css: { active: field() == 'weight'}" data-sort-field="weight">По весу
+		<span class="fa fa-sort-amount-asc" data-bind="visible: (field() == 'weight') && (! dir() || dir() == 'asc')" title="По возрастанию"></span>
+		<span class="fa fa-sort-amount-desc"  data-bind="visible: (field() == 'weight') && (dir() == 'desc')" title="По убыванию"></span>
+	</div>
+</div>
+<!-- /ko -->

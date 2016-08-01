@@ -1,4 +1,11 @@
 <?php
+/**
+ * Модуль инициализации ядра
+ * @author IlyaKB <veddbrus@mail.ru>
+ * @version 1.0
+ */
+
+namespace VediX;
 
 $GLOBALS['stime'] = microtime();
 

@@ -1,0 +1,57 @@
+@import "../_common/css/main.less";
+
+@import "../../_components/comments/comments.less";
+
+@import "../../../core/libs/font-awesome/css/font-awesome.min.css";
+
+@import "../../_components/pagination/pagination.less";
+
+#mag_list_static {
+	display: none;
+}
+
+div.controls {
+	text-align: center;
+	a {
+		font-size: 12pt;
+		text-decoration: underline;
+	}
+	button {
+		border-width: 1px;
+		border-radius: 10px;
+		background-color: #f5f4f3;
+		padding: 5px 10px;
+		font-weight: bold;
+		font-size: 11pt;
+	}
+	span.order-count {
+		font-weight: bold;
+		font-size: 11pt;
+	}
+	span.delete {
+		background-color: #fbf7ed;
+		width: 16px;
+		height: 15px;
+		display: inline-block;
+		text-align: center;
+		border: 2px solid #afaca5;
+		border-radius: 3px;
+		font-weight: 700;
+		vertical-align: text-bottom;
+		color: #b2b2b2;
+		cursor: pointer;
+		font-size: 23px;
+		line-height: 12px!important;
+		&:hover {
+			color: red;
+			background-color: #f5e79e;
+		}
+	}
+}
+
+@import "./css/categories.less";
+@import "./css/filters.less";
+@import "./css/sorting.less";
+@import "./css/pagination.less";
+@import "./css/list.less";
+@import "./css/detail.less";

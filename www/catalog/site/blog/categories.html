@@ -1,0 +1,28 @@
+{{#blog}}
+<div id="blog_categories" class="blog-categories">
+	<table>
+		<tbody>
+			{{#categories}}
+			<tr class="category" data-expand="{{is_expand}}">
+				<td>
+					<img data-bind="click: showPostsInCategory, event: { mouseover: categoryMouseOver, mouseout: categoryMouseOut }" src="/data/site/blog/ft_{{#is_expand}}minus{{/is_expand}}{{^is_expand}}plus{{/is_expand}}.gif"/>
+				</td>
+				<td>
+					<a {{#is_current}}class="current"{{/is_current}} href="/blog/{{url_name}}">{{name}}</a>
+				</td>
+			</tr>
+			{{#posts}}
+			<tr class="post" valign="top" {{^is_expand}}style="display: none"{{/is_expand}}>
+				<td {{^is_last}}style="background: url(/data/site/blog/ft1.gif)"{{/is_last}}>
+					<img src="/data/site/blog/ft{{#is_last}}2{{/is_last}}{{^is_last}}7{{/is_last}}.gif"/>
+				</td>
+				<td>
+					<a {{#is_current}}class="current"{{/is_current}} href="/blog/{{category_url_name}}/{{url_name}}">{{smallcaption}}</a>
+				</td>
+			</tr>
+			{{/posts}}
+			{{/categories}}
+		</tbody>
+	</table>
+</div>
+{{/blog}}

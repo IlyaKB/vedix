@@ -1,0 +1,31 @@
+<!-- STATIC SOURCE -->
+{{#pagination}}
+<div class="vdx-pagination-static" data-bind="sourcedata: pagination, visible: false" data-sd-type="object">
+	<span>
+		
+		<input type="hidden" data-sd-field="previous_page" data-sd-type="observable" value="{{previous_page}}"/>
+		<input type="hidden" data-sd-field="next_page"data-sd-type="observable"  value="{{next_page}}"/>
+		
+		{{#previous_page}}<a href="{{.}}">← предыдущая</a>{{/previous_page}}
+		{{^previous_page}}<span>← предыдущая</span>{{/previous_page}} |
+		{{#next_page}}<a href="?p={{next_page}}">следующая →</a>{{/next_page}}
+		{{^next_page}}<span>следующая →</span>{{/next_page}}
+		
+	</span>
+	<span data-sd-field="items" data-sd-type="observableArray">
+		{{#items}}
+		<section data-sd-type="object">
+			
+			<input type="hidden" data-sd-field="selected" data-sd-type="observable<boolean>" value="{{selected}}"/>
+			<input type="hidden" data-sd-field="text" data-sd-type="observable" value="{{text}}"/>
+			<input type="hidden" data-sd-field="href" data-sd-type="observable" value="{{href}}"/>
+			
+			{{#selected}}<span>{{text}}</span>{{/selected}}
+			{{^selected}}<a href="{{href}}">{{text}}</a>{{/selected}}
+			
+		</section>
+		{{/items}}
+	</span>
+</div>
+{{/pagination}}
+<!-- /STATIC SOURCE -->

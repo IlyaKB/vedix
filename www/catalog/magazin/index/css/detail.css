@@ -1,0 +1,148 @@
+@import "../../../../core/libs/colorbox/colorbox.css";
+div.mag-detail {
+  margin: 5px;
+}
+div.mag-detail div.breadcrumbs {
+  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+div.mag-detail div.breadcrumbs a {
+  font-size: 12pt;
+  font-weight: bold;
+  color: black;
+}
+div.mag-detail hr {
+  margin: 2px;
+}
+div.mag-detail h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+div.mag-detail h1 a {
+  color: black;
+}
+div.mag-detail div.info-top {
+  font-size: 8pt;
+  text-align: left;
+  padding: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+div.mag-detail div.main {
+  padding: 5px;
+  border-top: 1px dotted #ccc;
+}
+div.mag-detail div.main div.title {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 11pt;
+  text-align: left;
+}
+div.mag-detail div.main div.main-photo {
+  float: left;
+}
+div.mag-detail div.main div.main-photo img {
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-width: 3px;
+  border-style: double;
+  border-color: #999 #ccc #ccc #999;
+}
+div.mag-detail div.main div.composition {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  float: left;
+}
+div.mag-detail div.main div.composition div.title {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 11pt;
+}
+div.mag-detail div.main div.composition table {
+  width: 410px;
+  border-collapse: collapse;
+}
+div.mag-detail div.main div.composition table th,
+div.mag-detail div.main div.composition table td {
+  border: 1px solid #aaa;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font: italic bold 9pt Arial;
+  color: #000;
+}
+div.mag-detail div.main div.composition table tbody > tr td {
+  font-size: 8pt;
+}
+div.mag-detail div.main div.composition table tbody > tr td:nth-child(3) {
+  text-align: right;
+}
+div.mag-detail div.main div.composition table tbody > tr td:nth-child(1),
+div.mag-detail div.main div.composition table tbody > tr td:nth-child(4) {
+  text-align: center;
+}
+div.mag-detail div.main div.feature-photos {
+  float: right;
+  margin-left: 5px;
+}
+div.mag-detail div.main div.feature-photos div.photo {
+  margin-bottom: 5px;
+}
+div.mag-detail div.main div.feature-photos div.photo a img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ddd #999 #999 #ddd;
+}
+div.mag-detail div.main div.feature-photos div.photo a:hover {
+  text-decoration: none;
+}
+div.mag-detail div.main div.feature-photos div.photo a:hover img {
+  border: 2px solid red;
+}
+div.mag-detail div.main div.body {
+  clear: left;
+  text-align: justify;
+  text-indent: 30px;
+  font-size: 11pt;
+}
+div.mag-detail div.info-bottom {
+  margin-top: 10px;
+}
+div.mag-detail div.info-bottom table {
+  border-top: 1px dotted #aaa;
+}
+div.mag-detail div.info-bottom div {
+  margin-bottom: 3px;
+}
+div.mag-detail div.info-bottom div,
+div.mag-detail div.info-bottom div a {
+  font-size: 8pt;
+}
+div.mag-detail div.info-bottom .tags {
+  margin-top: 3px;
+  text-align: left;
+}
+div.mag-detail div.info-bottom .tags a {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-right: 1px solid #bbb;
+}
+div.mag-detail div.info-bottom .tags a:last-of-type {
+  border-right: none;
+}
+div.mag-detail div.info-bottom td.share {
+  text-align: right;
+}
+div.mag-detail div.info-bottom td.share div {
+  display: inline;
+  vertical-align: text-bottom;
+}

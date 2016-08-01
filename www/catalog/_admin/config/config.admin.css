@@ -1,0 +1,13 @@
+div.config-cnt {
+  padding: 10px;
+}
+div.config-cnt h3 {
+  margin-top: 0px;
+}
+div.config-cnt input {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+div.config-cnt input:disabled {
+  color: #ccc;
+}

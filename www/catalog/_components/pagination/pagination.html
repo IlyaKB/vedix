@@ -1,0 +1,16 @@
+<!-- DYNAMIC CONTENT -->
+<!-- ko with: pagination -->
+<div class="vdx-pagination" data-bind="visible: true" style="display: none;">
+	<span class="previous-next" data-bind="visible: previous_page() || next_page()">
+		<a data-bind="visible: previous_page, attr: { href: previousPageUrl() }" href="#">← предыдущая</a>
+		<span data-bind="visible: ! previous_page()">← предыдущая</span> |
+		<a data-bind="visible: next_page, attr: { href: nextPageUrl() }" href="#">следующая →</a>
+		<span data-bind="visible: ! next_page()">следующая →</span>
+	</span>
+	<span class="numbers" data-bind="foreach: items">
+		<span data-bind="visible: selected, text: text">1</span>
+		<a data-bind="visible: ! selected(), attr: { href: href }, text: text" href="#">1</a>
+	</span>
+</div>
+<!-- /ko -->
+<!-- /DYNAMIC CONTENT -->

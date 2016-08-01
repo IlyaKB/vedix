@@ -1,0 +1,210 @@
+{{!<div id="jqxSplitter" style="width:1000px; height: 400px; background-color: #FFFFAF">
+    <div style="background-color: #97FFAF"></div>
+    <div style="background-color: #E8C0AF"></div>
+</div>}}
+ 
+<script type="text/html" id="mainmenu_item">
+	<li data-bind="attr: { 'data-id': id }">
+		<p>
+			{{!<span data-bind="text: number"></span>}}
+			<input type="checkbox" class="field-status" data-bind="checked: status" title="Доступен или нет"/>
+			<input type="checkbox" class="field-isdemo" data-bind="checked: isdemo" title="Виден только при разработке"/>
+			<input type="text" class="field-name" data-bind="value: name, valueUpdate: 'keyup', enable: status" placeholder="Введите название пункта меню"/>
+			<input type="text" class="field-link" data-bind="value: src, valueUpdate: 'keyup', enable: status" placeholder="Введите гиперссылку"/>
+			<input type="button" class="button-selectpage" value="..." data-bind="enable: status" style="width: 25px" title="Выбрать страницу" data-toggle="modal" data-target="#pages_list_modal"/>
+			<input type="button" class="button-down" value="&#9660;" data-bind="enable: status" title="Опустить вниз"/>
+			<input type="button" class="button-up" value="&#9650;" data-bind="enable: status" title="Поднять наверх"/>
+			<input type="button" class="button-add" value="+" data-bind="enable: status" style="width: 25px" title="Добавить подпункт"/>
+			<input type="button" class="button-delete" value="&#215;" style="width: 25px" title="Удалить"/>
+			<input type="button" class="button-save" value="Применить" data-bind="enable: changed" title="Применить изменения"/>
+		</p>
+		<ul class="items" data-bind="foreach: childs">
+			<!-- ko template: 'mainmenu_item' --><!-- /ko -->
+		</ul>
+	</li>
+</script>
+  
+<div id="mainmenu_cnt" class="mainmenu-cnt">
+	<div class="mainmenu-tree" id="mainmenu_tree">
+		<p>Главное меню сайта: <input type="button" class="button-add" value="Добавить новый пункт главного меню" style="margin-left: 10px"/></p>
+		<ul class="items" data-bind="with: items">
+			<!-- ko foreach: childs -->
+				<!-- ko template: 'mainmenu_item' --><!-- /ko -->
+			<!-- /ko -->
+		</ul>
+	</div>
+</div>
+
+<div class="pages-list-modal modal fade" id="pages_list_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Выберите страницу</h4>
+      </div>
+      <div class="modal-body">
+		<div style="text-align: center" data-bind="visible: ! pagesLoaded()"><img src="/admin/img/loading_32.gif"/></div>
+		<ul id="pages_list" class="pages-list" data-bind="foreach: pages">
+			<li><label><input type="checkbox" data-bind="click: $parent.selectPage, checked: checked"/> <span data-bind="html: caption"></span> (<span data-bind="text: status ? 'Страница активна' : 'Отключена'"></span>)</label> <a data-bind="attr: { href: href }" target="_blank">Открыть</a></li>
+		</ul>
+		<!-- /ko -->
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-primary" data-bind="click: setLink">Вставить ссылку</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!<table class="tree-grid">
+	<thead>
+		<tr>
+			<th>Название пункта</th>
+			<th>Страница сайта (ссылка)</th>
+			<th>Доступен</th>
+			<th>noindex</th>
+			<th>Редирект</th>
+			<th>Статус</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft_minus.gif"/></th>
+							<th><img src="/admin/img/ft_expanded.gif"/></th>
+							<th class="caption">Главное меню сайта</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-3"><img src="/admin/img/ft0.gif"/></th>
+							<th><img src="/admin/img/ft_end.gif"/></th>
+							<th class="caption">Главная</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td>
+				<a href="/">Главная страница</a>
+			</td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-3"><img src="/admin/img/ft_minus.gif"/></th>
+							<th><img src="/admin/img/ft_expanded.gif"/></th>
+							<th class="caption">Аренда спецтехники</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td><a href="#"></a></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-1"><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-3"><img src="/admin/img/ft0.gif"/></th>
+							<th><img src="/admin/img/ft_end.gif"/></th>
+							<th class="caption">Аренда экскаватора</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td><a href="/pages/arenda1">Аренда экскаватора</a></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-1"><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-3"><img src="/admin/img/ft0.gif"/></th>
+							<th><img src="/admin/img/ft_end.gif"/></th>
+							<th class="caption">Аренда погрузчиков</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td><a href="/pages/arenda2">Аренда погрузчиков</a></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-1"><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-2"><img src="/admin/img/ft0.gif"/></th>
+							<th><img src="/admin/img/ft_end.gif"/></th>
+							<th class="caption">Аренда автокранов</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td><a href="/pages/arenda3">Аренда автокранов</a></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+		<tr>
+			<td>
+				<table class="caption">
+					<thead>
+						<tr>
+							<th><img src="/admin/img/ft0.gif"/></th>
+							<th class="tree-line-2"><img src="/admin/img/ft0.gif"/></th>
+							<th><img src="/admin/img/ft_end.gif"/></th>
+							<th class="caption">Информация</th>
+						</tr>
+					</thead>
+				</table>
+			</td>
+			<td><a href="/pages/arenda3">Аренда автокранов</a></td>
+			<td>всем</td>
+			<td></td>
+			<td></td>
+			<td>Ok</td>
+		</tr>
+	</tbody>
+</table>}}

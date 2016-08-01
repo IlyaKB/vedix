@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{config.main.sitename}} {{{config.main.title_sep}}} Авторизация</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta http-equiv="Content-Language" content="{{request.language}}"/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+		<script type="text/javascript" src="/core/libs/jquery-2.1.0.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/core/libs/bootstrap-3.1.1/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="/admin/js/utils.js"></script>
+		<link rel="stylesheet" type="text/css" href="/admin/css/authorization.css"/>
+		<script type="text/javascript">
+			function logout() {
+				$.post('/admin/', { jx: 'logout' }, function(response) {
+					var data = Utils.getJSONbyText(response);
+					if (data.success) {
+						location.href = location.href.replace(/#/, '');
+					}
+				}, 'text');
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		
+		<header>{{{currentDate}}}</header>
+			
+		<div class="authorization-form">
+			<h3>Вход в панель управления</h3>
+			<div style="color: red">Вы не имеете прав доступа к этому разделу сайта!</div>
+			<div style="margin-top: 15px;"><a href="#" onclick="return logout();">Выйти из текущей учётной записи</a></div>
+			<div style="margin-top: 15px;"><a href="/">Перейти на главную страницу сайта</a></div>
+		</div>
+		
+		<div class="wrap">
+			<div class="clearfix"></div>
+		</div>
+		<footer>{{{config.main.copyright}}}</footer>
+		
+	</body>
+</html>

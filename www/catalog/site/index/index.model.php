@@ -1,6 +1,7 @@
 <?php
+namespace VediX;
 
-class IndexModel extends SiteModel {
+final class IndexModel extends SiteModel {
 	
 	public $resources_module = Array(
 		Array('css' => 1, 'head' => 1, 'href' => '/catalog/site/index/index.css')

@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 define('DEFAULT_SKIN', 'catalog');
 define('DEFAULT_APPLICATION', 'site');
@@ -45,7 +46,7 @@ new ConfigSite();
  * STATIC: Параметры подключения к серверу приложений (для установки и обновления веб-приложений VediX)
  */
 class ConfigServerApplications {
-	const dname = 'servapp.web-applications.ru'; # Доменное имя сервера приложений VediX, на котором обслуживается ваш сайт
+	const dname = 'server.web-applications.ru'; # Доменное имя сервера приложений VediX, на котором обслуживается ваш сайт
 	const port = 80; # Порт сервера приложений
 	const script_time_out = 58; # Ограничение времени выполнения php-скриптов
 	const fsock_open_timeout = 10; # Ограничение времени ожидания соединения с сервером приложений

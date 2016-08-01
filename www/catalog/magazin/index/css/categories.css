@@ -1,0 +1,14 @@
+div.mag-categories table td {
+  padding: 3px;
+}
+div.mag-categories table td a {
+  font-weight: bold;
+  color: black;
+}
+div.mag-categories table td.current {
+  background-color: #ffe45c;
+  border-radius: 10px;
+}
+div.mag-categories table td.current a {
+  color: red;
+}

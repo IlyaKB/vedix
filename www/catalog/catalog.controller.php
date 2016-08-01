@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 /**
  * Главный контроллер скина "Catalog"
@@ -15,8 +16,6 @@ class CatalogController extends PageController {
 	public function run() {
 		
 		parent::run();
-		
-		//$_SESSION['authorized'] = false;
 		
 		if (Request::AJAX()) {
 			switch (Request::JX()) {

@@ -1,4 +1,5 @@
 <?php
+namespace VediX;
 
 /**
  * Utils for web documents (pages, news, blog, states)
