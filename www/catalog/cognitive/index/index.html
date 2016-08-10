@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	{{>gcommon:head}}
+	
+	<body>
+
+		<div class="main-layer">
+
+			<div class="header-layer">
+				{{>common:header}}
+			</div><!-- .header-layer -->
+
+			{{>gcommon:notification}}
+
+			<div class="middle-layer">
+				<div class="content-layer">
+					<main class="content-main-layer">
+
+						<h3>Тестовое задание Cognitive</h3>
+
+						<div class="main-cognitive">
+							<ul>
+
+								<li>
+									<table class="monets">
+										<caption>Мой кошелёк:</caption>
+										<thead>
+											<tr>
+												<th data-bind="text: client_purse.monets[1]()+' шт.'">0 шт.</th>
+												<th data-bind="text: client_purse.monets[2]()+' шт.'">0 шт.</th>
+												<th data-bind="text: client_purse.monets[5]()+' шт.'">0 шт.</th>
+												<th data-bind="text: client_purse.monets[10]()+' шт.'">0 шт.</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><span data-bind="click: clickMonet" data-nominal="1">1р.</span></td>
+												<td><span data-bind="click: clickMonet" data-nominal="2">2р.</span></td>
+												<td><span data-bind="click: clickMonet" data-nominal="5">5р.</span></td>
+												<td><span data-bind="click: clickMonet" data-nominal="10">10р.</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+
+								<li>
+									<table class="positions">
+										<caption>Ассортимент товаров:</caption>
+										<thead>
+										<tr>
+											<th>Название</th>
+											<th>Стоимость</th>
+											<th>Остаток</th>
+											<th>Заказано</th>
+										</tr>
+										</thead>
+										<tbody>
+										<!-- ko foreach: vm.positions -->
+											<tr data-bind="css: { 'available': $parent.vm.deposite() >= cost, 'ended': balance() == 0 }, click: $root.vm.buy">
+												<td data-bind="text: name"></td>
+												<td data-bind="text: cost+' руб.'"></td>
+												<td data-bind="text: balance() + ' порций'"></td>
+												<td data-bind="text: ordered() + ' порций'"></td>
+											</tr>
+										<!-- /ko -->
+										</tbody>
+									</table>
+								</li>
+
+								<li>
+									<table class="monets">
+										<caption>Кошелёк VM:</caption>
+										<thead>
+										<tr>
+											<th data-bind="text: vm.purse.monets[1]()+' шт.'">0 шт.</th>
+											<th data-bind="text: vm.purse.monets[2]()+' шт.'">0 шт.</th>
+											<th data-bind="text: vm.purse.monets[5]()+' шт.'">0 шт.</th>
+											<th data-bind="text: vm.purse.monets[10]()+' шт.'">0 шт.</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td><span class="active">1р.</span></td>
+											<td><span class="active">2р.</span></td>
+											<td><span class="active">5р.</span></td>
+											<td><span class="active">10р.</span></td>
+										</tr>
+										</tbody>
+									</table>
+
+									<div class="deposite">
+										Ваша внесённая сумма: <span data-bind="text: vm.deposite() + ' руб.'"></span>
+									</div>
+
+									<div class="short-change">
+										<button data-bind="click: clickShortChange">Вернуть сдачу</button>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+
+					</main><!-- .content-main-layer -->
+				</div><!-- .content-layer -->
+			</div><!-- .middle-layer -->
+
+		</div><!-- .main-layer -->
+		
+		<div class="footer-layer">
+			{{>common:footer}}
+		</div><!-- footer-layer -->
+		
+		{{>gcommon:resources_foot}}
+	</body>
+</html>

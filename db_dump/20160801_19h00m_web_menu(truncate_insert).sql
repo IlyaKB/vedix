@@ -39,8 +39,7 @@ INSERT INTO `web_menu` (`id`, `parent_id`, `number`, `name`, `code`, `src`, `des
 (45, 34, 1, 'Вопросы и ответы', 'code1', '/faq', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, '/^\\/faq[\\/]?$/i'),
 (46, 34, 2, 'Контакты', 'code2', '/pages/about', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, '/\\/pages\\/about/i'),
 (48, 47, 2, 'Геополитика', 'code1', '', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL),
-(49, 47, 3, 'Симулятор', 'code2', '/simulator2', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, '/\\/simulator2/i'),
 (52, 48, 1, 'Краткий обзор того, что сделал Путин с 2000 по 2014 год', 'code1', '/pages/kratkiy_obzor_togo_chto_sdelal_putin_s_2000_po_2014_god', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL),
 (53, 48, 2, 'Смысл войны между Новороссией и Украиной', 'code2', '/pages/smisl_voyni_mezhdu_novorossiey_i_ukrainoy', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL),
-(54, 48, 3, 'I-II-III Мировая Война', 'code3', '/pages/i_ii_iii_mirovaya_voyna', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL),
-(55, 47, 4, 'Тестовое задание Etton', 'code4', '/etton', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL);
+(55, 47, 4, 'Тестовое задание Etton', 'code4', '/etton', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL),
+(56, 47, 5, 'Тестовое задание Cognitive', 'code5', '/cognitive', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, 0, NULL, NULL);

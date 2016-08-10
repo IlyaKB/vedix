@@ -1,0 +1,98 @@
+@import "../_common/css/main.less";
+div.main-cognitive {
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		li {
+			padding: 10px;
+			float: left;
+		}
+	}
+
+	table.monets {
+		border-collapse: collapse;
+		caption {
+			text-align: left;
+			font-weight: bold;
+		}
+		th {
+			background-color: #ffe;
+		}
+		th, td {
+			width: 75px;
+			text-align: center;
+			padding: 15px 10px 15px 10px;
+			border: 1px solid gray;
+			span {
+				border-radius: 20px;
+				border: 2px solid #ffe45c;
+				padding: 10px;
+				&:hover {
+					cursor: pointer;
+					background-color: #ffa;
+					font-weight: bold;
+				}
+				&.active {
+					background-color: #ffa;
+					cursor: default;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+	table.positions {
+		width: 420px;
+		border-collapse: collapse;
+		caption {
+			text-align: left;
+			font-weight: bold;
+		}
+		th {
+			background-color: #ffe;
+			text-align: center;
+			padding: 15px 10px 15px 10px;
+		}
+		th, td {
+			border: 1px solid gray;
+		}
+		td {
+			padding: 3px;
+			&:nth-of-type(2) {
+				width: 75px;
+				text-align: right;
+			}
+			&:nth-of-type(3) {
+				text-align: center;
+				width: 50px;
+			}
+		}
+		tbody {
+			tr {
+				background-color: #f7f7f7;
+				cursor: default;
+				&.available {
+					background-color: #fff;
+					cursor: pointer;
+					&:hover {
+						background-color: #b9fe8f;
+					}
+				}
+				&.ended {
+					background-color: #feada7;
+					cursor: default;
+					&:hover {
+						background-color: #feada7;
+					}
+				}
+			}
+		}
+	}
+
+	div.deposite {
+		margin-top: 10px;
+		font-weight: bold;
+	}
+}

@@ -7,7 +7,7 @@ require.config({
 	waitSeconds: 30,
 	paths: {
 		"underscore": "../core/libs/underscore-min",
-		"knockout": "../core/libs/knockout-3.2.0.min",
+		"knockout": "../core/libs/knockout/knockout-3.2.0.min",
 		"jquery": "../core/libs/jquery-2.1.1.min",
 		"jquery-ui": "../core/libs/jquery-ui-1.11.1/jquery-ui.min", // NO AMD
 		"jquery-ui-core" : "../core/libs/jquery-ui-1.10.4/ui/minified/jquery.ui.core.min", // AMD
@@ -25,7 +25,7 @@ require.config({
 		"bootstrap3": "../core/libs/bootstrap-3.1.1/js/bootstrap.min",
 		"moment": "../core/libs/moment.min",
 		"moment-ru": "../core/libs/moment.ru",
-		"d3": "../core/libs/d3-3.4.3.min"
+		"d3": "../core/libs/d3js/d3-3.4.3.min"
 	},
 	shim: {
 		"jquery-ui": { // v1.11.1

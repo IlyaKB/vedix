@@ -137,7 +137,7 @@ class PagesAdmin extends SectionDefaultController {
 		if ($id) {
 			$qr = DB::execute('SELECT url_name FROM web_pages WHERE (id = ?)', $id);
 			$pagecode = DB::fetch_val($qr);
-			clearCache('page', $pagecode);
+			clearCache('page_detail', $pagecode);
 
 			$qr = DB::execute('UPDATE web_pages SET caption = ?, url_name = ?, body = ?, status = ?, upddate = Now() WHERE (id = ?)', $caption, $url_name, $body, $status, $id);
 		} else {
@@ -171,7 +171,7 @@ class PagesAdmin extends SectionDefaultController {
 		$qr = DB::execute('SELECT url_name FROM web_pages WHERE (id = ?)', $id);
 		$pagecode = DB::fetch_val($qr);
 
-		clearCache('page', $pagecode);
+		clearCache('page_detail', $pagecode);
 
 		$qr = DB::execute('DELETE FROM web_pages WHERE (id = ?)', $id);
 

@@ -1,6 +1,8 @@
 # VediX native web MVC-engine
 
-Native hierarchical "model-view-controller" engine for development "from scratch" websites and information systems with a web interface. The core engine uses some of the ready-made solutions, such as the modified template "mustache" and WYSIWYG-editor elRTE+elFinder. Back-end part using PHP as a server programming language and MySQL as database. The front-end part is usually written in HTML5, LESS/CSS3, Javascript/Typescript and popular libraries on the user's choice, for example, jQuery, Bootstrap, KnockoutJS (MVVM) and others.
+Native hierarchical "model-view-controller" engine for development "from scratch" web-applications, websites and information systems with a web interface. The core engine uses some of the ready-made solutions, such as the modified template "mustache" and popular Javascript-libraries. Back-end part using PHP as a server programming language and MySQL as database. The front-end part is usually written in HTML5, LESS/CSS3, Javascript/Typescript and popular libraries on the user's choice, for example, jQuery, Bootstrap, KnockoutJS (MVVM) and others.
+
+Developer Site: [web-applications.ru](http://web-applications.ru).
 
 ## Setup
 To start the engine needs HTTP-Apache server with PHP5 and database MySQL. Engine has been developed under the PHP 5.5.9, MySQL 5.6.16, Apache 2.4.7
@@ -34,3 +36,6 @@ NameVirtualHost *:80
 
 ## Contribute
 If you like this project, please contribute to it, help me to do it better!
+
+##License
+This project under GPLv3 license
