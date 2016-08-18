@@ -2,6 +2,7 @@
 namespace VediX;
 
 if (! defined('CACHE_DEFAULT_TTL')) define('CACHE_DEFAULT_TTL', 60);
+if (! is_dir(HD_CACHE)) mkdir(HD_CACHE, 0777, true); // TODO: 1 раз в сессию
 
 /**
  * Получить данные по namespace и ключу
